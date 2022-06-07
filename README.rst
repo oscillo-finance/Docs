@@ -1,9 +1,6 @@
-Template for the Read the Docs tutorial
-=======================================
+oscillo finance
+===============
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Gasless trading protocol supports full limit order books
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+https://osc.finance

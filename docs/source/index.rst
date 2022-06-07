@@ -1,22 +1,61 @@
-Welcome to Lumache's documentation!
+oscillo - Always Better than DEX
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+oscillo_ is gasless trading protocol supports full limit order books
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+.. _oscillo: https://osc.finance
 
-.. note::
+Welcome to oscillo
+------------------
 
-   This project is under active development.
+:doc:`Why did we build oscillo <welcome/background>`
 
-Contents
---------
+:doc:`What is oscillo? <welcome/oscillo>`
+
+:doc:`How does oscillo work? <welcome/works>`
+
+:doc:`Key features <welcome/feature>`
+
+
+Quick Start
+-----------
+
+:docs:`How to trade <quickstart/trade>`
+
+:docs:`Open orders <quickstart/orders>`
+
+:docs:`History <quickstart/history>`
+
 
 .. toctree::
+   :caption: Welcome to oscillo
+   :maxdepth: 2
+   :hidden:
 
-   usage
-   api
+   welcome/background
+   welcome/oscillo
+   welcome/works
+   welcome/feature
+
+.. toctree::
+   :caption: Quick Start
+   :maxdepth: 2
+   :hidden:
+
+   quickstart/trade
+   quickstart/orders
+   quickstart/history
+
+.. toctree::
+   :caption: FAQ
+   :maxdepth: 2
+   :hidden:
+
+   faq/txFee
+
+.. toctree::
+   :caption: Roadmap
+   :maxdepth: 1
+   :hidden:
+
+    roadmap/roadmap
