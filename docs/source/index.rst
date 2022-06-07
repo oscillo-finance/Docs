@@ -38,6 +38,13 @@ Quick Start
    welcome/feature
 
 .. toctree::
+   :caption: Links
+   :maxdepth: 1
+   :hidden:
+
+   links
+
+.. toctree::
    :caption: Quick Start
    :maxdepth: 2
    :hidden:
