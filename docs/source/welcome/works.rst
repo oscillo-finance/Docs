@@ -2,11 +2,6 @@ How does oscillo works?
 =======================
 
 
-.. figure:: how_oscillo_works.png
-    :align: center
-    :figwidth: 100%
-
-
 1. A maker(bid)/taker(ask) creates an order
 2. The order is hashed, and the maker/taker signs the order cryptographically.
 3. The order is submitted to the order book.
