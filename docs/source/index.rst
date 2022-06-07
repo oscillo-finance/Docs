@@ -20,11 +20,11 @@ Welcome to oscillo
 Quick Start
 -----------
 
-:docs:`How to trade <quickstart/trade>`
+:doc:`How to trade <quickstart/trade>`
 
-:docs:`Open orders <quickstart/orders>`
+:doc:`Open orders <quickstart/orders>`
 
-:docs:`History <quickstart/history>`
+:doc:`History <quickstart/history>`
 
 
 .. toctree::
