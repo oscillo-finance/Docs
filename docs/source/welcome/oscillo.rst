@@ -1,6 +1,4 @@
 What is oscillo?
 ================
 
-oscillo is a gasless trading protocol that supports full limit order books with an interface familiar to centralized exchanges.
-You can use limit orders with gasless transactions (meta-transaction in other words). Once again, you sign messages(not transactions) containing information about a transaction. Relayer(here oscillo) sends transactions with this information to the blockchain network, paying for the gas cost.
-At oscillo, You don't need to prepare any native tokens like ETH and MATIC for the gas cost and move assets from your wallet. Your assets remain entirely in your wallet until the matched orders are settled.
+Oscillo is a trading protocol with gasless transactions with an order book system similar to centralized exchanges. Traders are able to use gasless transactions to make limit orders. Oscillo sends these transactions to the blockchain and pays the transaction fee. When using Oscillo, traders do not have to provide native tokens such as ETH or MATIC for gas. Their assets remain in their wallet until the moment their order processes.
