@@ -1,7 +1,7 @@
-API
-===
+Websocket
+===============
 
 .. autosummary::
    :toctree: generated
 
-   lumache
+

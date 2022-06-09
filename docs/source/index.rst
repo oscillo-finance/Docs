@@ -54,6 +54,16 @@ Quick Start
    quickstart/history
 
 .. toctree::
+   :caption: API
+   :maxdepth: 2
+   :hidden:
+
+   api/introduction
+   api/rest
+   api/ws
+
+
+.. toctree::
    :caption: FAQ
    :maxdepth: 2
    :hidden:
@@ -65,4 +75,4 @@ Quick Start
    :maxdepth: 1
    :hidden:
 
-    roadmap/roadmap
+   roadmap/roadmap

@@ -157,3 +157,5 @@ cython_debug/
 
 .idea/*
 node_modules
+
+.vscode
