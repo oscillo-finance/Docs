@@ -50,6 +50,7 @@ Quick Start
    :hidden:
 
    quickstart/tradeSimple
+   quickstart/tradeExpert
    quickstart/orders
    quickstart/history
 

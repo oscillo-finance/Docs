@@ -23,8 +23,7 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'oscillo': ('https://osc.finance', None),
+    'python': ('https://docs.python.org/3/', None)
 }
 intersphinx_disabled_domains = ['std']
 
