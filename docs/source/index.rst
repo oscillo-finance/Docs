@@ -20,7 +20,7 @@ Welcome to oscillo
 Quick Start
 -----------
 
-:doc:`How to trade <quickstart/tradeSimple>`
+:doc:`Trade with a simple mode <quickstart/tradeSimple>`
 
 :doc:`Open orders <quickstart/orders>`
 
@@ -49,7 +49,7 @@ Quick Start
    :maxdepth: 2
    :hidden:
 
-   quickstart/trade
+   quickstart/tradeSimple
    quickstart/orders
    quickstart/history
 

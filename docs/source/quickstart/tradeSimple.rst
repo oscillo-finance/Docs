@@ -6,7 +6,7 @@ Interface
 
 Here's the trading interface
 
-.. figure:: simple_part.png
+.. figure:: static/simple_part.png
     :align: center
     :figwidth: 100%
 
@@ -23,25 +23,25 @@ Step
 
 1. Click 'Connect Wallet' and choose the wallet you use.
 
-.. figure:: before_wallet_connect.png
+.. figure:: static/before_wallet_connect.png
     :align: center
     :figwidth: 100%
 
 - We currently support Metamask, Trust Wallet, Math Wallet, and Walletconnect.
 
-.. figure:: choose_wallet.png
+.. figure:: static/choose_wallet.png
     :align: center
     :figwidth: 100%
 
 2. Click '▼' to choose the token you trade.
 
-.. figure:: dwbtc_click.png
+.. figure:: static/dwbtc_click.png
     :align: center
     :figwidth: 100%
 
 - dWBTC, dWETH, and dUSDC are just testing tokens with no value.
 
-.. figure:: choose_token.png
+.. figure:: static/choose_token.png
     :align: center
     :figwidth: 100%
 
@@ -50,11 +50,11 @@ Step
     - You should keep the amount you order in your wallet or your order will be canceled.
     - The transaction fee is the gas fee. This fee will be subtracted from the token you will receive automatically.
 
-.. figure:: buy.png
+.. figure:: static/buy.png
     :align: left
     :figwidth: 50%
 
-.. figure:: sell.png
+.. figure:: static/sell.png
     :align: right
     :figwidth: 50%
 
