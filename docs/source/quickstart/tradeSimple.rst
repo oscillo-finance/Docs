@@ -50,13 +50,11 @@ Step
     - You should keep the amount you order in your wallet or your order will be canceled.
     - The transaction fee is the gas fee. This fee will be subtracted from the token you will receive automatically.
 
-.. figure:: static/buy.png
-    :align: left
-    :figwidth: 50%
+.. image:: static/buy.png
+    :width: 50%
 
-.. figure:: static/sell.png
-    :align: right
-    :figwidth: 50%
+.. image:: static/sell.png
+    :width: 50%
 
 5. You receive the signature request from 'osc.finance' at the wallet app. After confirming it, your order will be seen on the open order list.
 

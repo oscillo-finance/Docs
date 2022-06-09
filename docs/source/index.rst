@@ -22,6 +22,8 @@ Quick Start
 
 :doc:`Trade with a simple mode <quickstart/tradeSimple>`
 
+:doc:`Trade with a expert mode <quickstart/tradeExpert>`
+
 :doc:`Open orders <quickstart/orders>`
 
 :doc:`History <quickstart/history>`
