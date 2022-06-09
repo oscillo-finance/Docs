@@ -20,9 +20,9 @@ Welcome to oscillo
 Quick Start
 -----------
 
-:doc:`Trade with a simple mode <quickstart/tradeSimple>`
+:doc:`Trade with a simple mode <quickstart/trade_simple>`
 
-:doc:`Trade with a expert mode <quickstart/tradeExpert>`
+:doc:`Trade with a expert mode <quickstart/trade_expert>`
 
 :doc:`Open orders <quickstart/orders>`
 
