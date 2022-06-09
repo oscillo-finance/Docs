@@ -2,9 +2,9 @@ REST API
 ********
 
 
-Oscillo Rest API consists of market-side and order-side
+oscillo Rest API consists of market-side and order-side
 
-In Market-side: Retrive Oscillo Price History of listing market.
+In Market-side: Retrive oscillo Price History of listing market
 In Order-side: Place Order and Cancel Order 
 
 -----
@@ -26,8 +26,7 @@ Price history
 
 
 **Response**:
-
-    .. sourcecode:: json
+   .. sourcecode:: json
 
       {
          "code":200,
@@ -61,8 +60,7 @@ Place Order
 
 
 **Response**:
-
-    .. sourcecode:: json
+   .. sourcecode:: json
 
       {
          "code":200,
@@ -86,7 +84,7 @@ Place Order
     */
     async placeOrder(tokenIn: string, tokenOut: string, amount: string, lPrice: number, unwrap: number = 0) {
         const order = { account: this._wallet.address, tokenIn: tokenIn, tokenOut: tokenOut, amount: amount, lprice: lPrice.toFixed() }
-        const domain = { name: 'Oscillo', version: 'v1', chainId: OSC.POLYGON.CHAIN_ID, verifyingContract: OSC.POLYGON.EXCHANGE_ADDRESS }
+        const domain = { name: 'oscillo', version: 'v1', chainId: OSC.POLYGON.CHAIN_ID, verifyingContract: OSC.POLYGON.EXCHANGE_ADDRESS }
         const types: Record<string, Array<TypedDataField>> = { Order: OrderTypeFields }
         const signature = await this._wallet._signTypedData(domain, types, order)
         
@@ -114,7 +112,6 @@ Cancel Order
 
 
 **Example response**:
-
     .. sourcecode:: json
 
       {
@@ -132,7 +129,7 @@ Cancel Order
     * CancelOrder
     */
     async cancelOrder(key: string) {
-        const domain = { name: 'Oscillo', version: 'v1', chainId: OSC.POLYGON.CHAIN_ID, verifyingContract: OSC.POLYGON.EXCHANGE_ADDRESS }
+        const domain = { name: 'oscillo', version: 'v1', chainId: OSC.POLYGON.CHAIN_ID, verifyingContract: OSC.POLYGON.EXCHANGE_ADDRESS }
         const types: Record<string, Array<TypedDataField>> = { Cancel: CancelTypeFields }
         const signature = await this._wallet._signTypedData(domain, types, { key })
         const data = { key, signature: signature, account: this._wallet.address }

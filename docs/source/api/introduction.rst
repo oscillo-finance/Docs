@@ -1,4 +1,4 @@
-Introduction
+INTRODUCTION
 ************
 
 
@@ -15,7 +15,7 @@ by Developers
 General API Information
 =======================
 
-Oscillo supports two networks [ETHEREUM, POLYGON].
+oscillo supports two networks [ETHEREUM, POLYGON].
 
 
 
@@ -38,7 +38,7 @@ HTTP Return Codes
 - HTTP 403 return code is used when the WAF Limit (Web Application Firewall) has been violated.
 - HTTP 429 return code is used when breaking a request rate limit.
 - HTTP 418 return code is used when an IP has been auto-banned for continuing to send requests after receiving 429 codes.
-- HTTP 5XX return codes are used for internal errors; the issue is on Oscillo internal server error.
+- HTTP 5XX return codes are used for internal errors; the issue is on oscillo internal server error.
 
 
 
@@ -47,7 +47,7 @@ HTTP Return Codes
 Rate Limits
 -----------
 
-Oscillo rate limiters defined about REST api calls.
+oscillo rate limiters defined about REST api calls.
 When the api count exceeds the limit, you will receive a 429 error. Please check the following rate Limit rules.
 
     ===================== =========================== =======================
@@ -70,7 +70,7 @@ Address & Listing
 ETHEREUM
 --------
 
-Oscillo Contract
+oscillo Contract
     ===================== ====================================================== 
     Contract               Address                   
     ===================== ====================================================== 
@@ -95,7 +95,7 @@ POLYGON
 -------
 
 
-Oscillo Contract
+oscillo Contract
     ===================== ====================================================== 
     Contract               Address                   
     ===================== ====================================================== 

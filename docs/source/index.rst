@@ -62,6 +62,7 @@ Quick Start
    api/introduction
    api/rest
    api/ws
+   api/sample   
 
 
 .. toctree::
