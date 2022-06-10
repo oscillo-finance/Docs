@@ -5,54 +5,32 @@ oscillo_ is gasless trading protocol supports full limit order books
 
 .. _oscillo: https://osc.finance
 
-Welcome to oscillo
-------------------
 
-:doc:`Why did we build oscillo <welcome/background>`
+Links
+-----
 
-:doc:`What is oscillo? <welcome/oscillo>`
-
-:doc:`How does oscillo work? <welcome/works>`
-
-:doc:`Key features <welcome/feature>`
-
-
-Quick Start
------------
-
-:doc:`Trade with a simple mode <quickstart/trade_simple>`
-
-:doc:`Trade with a expert mode <quickstart/trade_expert>`
-
-:doc:`Open orders <quickstart/orders>`
-
-:doc:`History <quickstart/history>`
-
+- App: https://osc.finance
+- Twitter: https://twitter.com/oscfinance
+- Discord: https://discord.gg/RJWDHVZSjn
+- Docs: https://docs.osc.finance
+- Github: https://github.com/oscillo-finance
+- Contact: https://forms.gle/fSYbajKmPY6KFsS78
 
 .. toctree::
-   :caption: Welcome to oscillo
-   :maxdepth: 2
-   :hidden:
+    :titlesonly:
+    :hidden:
+    :glob:
 
-   welcome/background
-   welcome/oscillo
-   welcome/works
-   welcome/feature
-
-.. toctree::
-   :caption: Links
-   :maxdepth: 1
-   :hidden:
-
-   links
+    welcome
+    faq
 
 .. toctree::
    :caption: Quick Start
    :maxdepth: 2
    :hidden:
 
-   quickstart/tradeSimple
-   quickstart/tradeExpert
+   quickstart/simple
+   quickstart/expert
    quickstart/orders
    quickstart/history
 
@@ -64,18 +42,3 @@ Quick Start
    api/introduction
    api/rest
    api/ws
-
-
-.. toctree::
-   :caption: FAQ
-   :maxdepth: 2
-   :hidden:
-
-   faq/txFee
-
-.. toctree::
-   :caption: Roadmap
-   :maxdepth: 1
-   :hidden:
-
-   roadmap/roadmap
