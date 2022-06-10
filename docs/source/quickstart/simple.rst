@@ -1,8 +1,6 @@
 Trade with a simple mode
 ========================
 
-----
-
 .. role:: raw-html(raw)
     :format: html;
 

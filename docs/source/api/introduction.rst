@@ -1,4 +1,4 @@
-INTRODUCTION
+Introduction
 ************
 
 
@@ -69,12 +69,22 @@ Terminology
     :figwidth: 100%
     :width: 200px
 
-* **price**: oscillo reference price. All order matches are based on the current oscillo price.
-* **lprice**: the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
-* **precision**: the precision of lprice (floating point expression range).
-* **reserve**: This is the protocol reserve of the market deducted from your token received. The reserves are redistributed to participants through OSC tokens.
-* **minAmount**: minimum tradable amount. if the available order amount is less than minAmount, the order will be ignored. 
-* **txFee**: The gas cost of executors performing transactions on your behalf. It is deducted from your token received.
+
+* **price**: The market price of oscillo. All orders are traded at the market price.
+
+* **price_denom**: 1e6.
+
+* **precision**: The range of the floating-point of the ``price``. ``lprice`` is expressed as a combination of ``precision`` and ``price_denom``. lprice = price.toFixed(precision) * price_denom
+
+* **lprice**: the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the ``lprice`` should be set at a disadvantage compared to the market ``price``. When the market ``price`` of WBTC is $30,000, selling ``lprice`` should be less than $30,000, and buying ``lprice`` should be above $30,000. In the oscillo interface, ``lprice`` is displayed as only if [≥, ≤]
+
+* **reserve**: This is the protocol reserve of the market deducted from your token received. The reserves are redistributed to participants through OSC tokens. TradingFee = reserve / reserve_denome * TradeVolume
+
+* **reserve_denom**: 1e6.
+
+* **minAmount**: Minimum tradable amount. If the available order amount is less than minAmount, the order will be cancelled automatically.
+
+* **txFee**: The gas cost of executors performing transactions on your behalf. It is deducted from your token received. Denominated in dollar value.
 
 
 
@@ -85,15 +95,15 @@ Terminology
 Contract
 ========
 
-Contract
 
-============================ ================================================= 
-  .. centered:: Contract     .. centered:: Address                   
-============================ =================================================
-  .. centered:: Exchange           0xCD2203534539Ac6b82d2D21B8575fe0F8Ca42Ccf          
-  .. centered:: OSCToken           0x7e00AecaBA5df64e9FeFAb55aC6B3F58100e79E2  
-  .. centered:: Distributor        0x3103683332086a746835655F656141cD5582a008         
-============================ ================================================= 
+oscillo contract
+  ============================== ================================================= 
+      .. centered:: Contract      .. centered:: Address                   
+  ============================== =================================================
+      .. centered:: Exchange       0xCD2203534539Ac6b82d2D21B8575fe0F8Ca42Ccf          
+      .. centered:: OSCToken       0x7e00AecaBA5df64e9FeFAb55aC6B3F58100e79E2  
+      .. centered:: Distributor    0x3103683332086a746835655F656141cD5582a008         
+  ============================== ================================================= 
 
 
 
@@ -111,24 +121,33 @@ Listing
 
 
 Ethereum
-    ========================= ====================================================== ======================================================
-    .. centered:: Market ID   .. centered:: Base Token Address                          .. centered:: Quote Token Address
-    ========================= ====================================================== ======================================================
-      WBTC-USDC                 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      WETH-USDC                 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      DAI-USDC                  0x6B175474E89094C44Da98b954EedeAC495271d0F              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      USDT-USDC                 0xdAC17F958D2ee523a2206206994597C13D831ec7              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-    ========================= ====================================================== ======================================================
+    ========================= ==========================================
+    .. centered:: Market ID   .. centered:: Base / Quote Token Address                      
+    ========================= ==========================================
+    .. centered:: WBTC-USDC     | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599(WBTC)/
+                                  0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    .. centered:: WETH-USDC     | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(WETH)/
+                                 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    .. centered:: DAI-USDC      | 0x6B175474E89094C44Da98b954EedeAC495271d0F(DAI)/
+                                 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    .. centered:: USDT-USDC     | 0xdAC17F958D2ee523a2206206994597C13D831ec7(USDT)/
+                                 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    ========================= ==========================================
 
 
 Polygon
-    ========================= ====================================================== ======================================================
-    .. centered:: Market ID    .. centered:: Base Token Address                          .. centered:: Quote Token Address
-    ========================= ====================================================== ======================================================
-    WBTC-USDC                   0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    WETH-USDC                   0x7ceb23fd6bc0add59e62ac25578270cff1b9f619              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    WMATIC-USDC                 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    DAI-USDC                    0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    USDT-USDC                   0xc2132d05d31c914a87c6611c10748aeb04b58e8f              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    ========================= ====================================================== ======================================================
+    ========================= ==========================================
+    .. centered:: Market ID    .. centered:: Base / Quote Token Address                     
+    ========================= ==========================================
+    .. centered:: WBTC-USDC     | 0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6(WBTC)/
+                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
+    .. centered:: WETH-USDC     | 0x7ceb23fd6bc0add59e62ac25578270cff1b9f619(WETH)/
+                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
+    .. centered:: WMATIC-USDC   | 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270(WMATIC)/
+                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
+    .. centered:: DAI-USDC      | 0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063(DAI)/
+                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
+    .. centered:: USDT-USDC     | 0xc2132d05d31c914a87c6611c10748aeb04b58e8f(USDT)/
+                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
+    ========================= ==========================================
 
