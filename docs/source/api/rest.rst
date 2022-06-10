@@ -46,6 +46,7 @@ Market Info
             "price_denom": 1000000,
             "reserve": 0,
             "reserve_denom": 1000000,
+            "precision": 0,
             "market": "WBTC-USDC",
             "minAmount": "250000",
             "price": 29963000000,
