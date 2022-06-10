@@ -15,7 +15,7 @@ Here are open orders
 
 a. Your position in the market
 
-b. There are three statuses for an order; Pending, Filled, and Canceled.
+b. There are three statuses for an order; Active, Filled, and Canceled.
     - Active: searching the orders with your condition
     - Filled: complete the trading
     - Canceled: the order is canceled.
