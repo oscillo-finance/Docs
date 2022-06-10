@@ -74,7 +74,7 @@ Place Order
             - tokenIn(*string*) -- Input token address
             - tokenOut(*string*) -- Output token address
             - amount(*string*) -- Trading amount (base token amount)
-            - lprice(*number*) -- Guaranteed Price. Orders are traded at a favorable price than lprice. The lprice denominator is 1e6. See `Terminology`
+            - lprice(*number*) -- Guaranteed Price. Orders are traded at a favorable price than lprice. The lprice denominator is 1e6. See `Terminology`_
    * **signature** (*string*) -- See `EIP-712 specification`_ , `SignTypedData`_ 
    * **unwrap** (*number: 0 or 1*) -- Bid only option for native coins like ETH or MATIC. Set to 1 to receive it in unwrapped native coins. 0 otherwise.
 
