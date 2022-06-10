@@ -13,117 +13,17 @@ Rest API consists of market-side and order-side
 Market
 ======
 
-All Listing Markets Info
-++++++++++++++++++++++++
+Market Info
++++++++++++
 
-.. http:get::  /market/
-
-
-:Parameters:
-
-   * **none**
-
-
-**Response**:
-   .. sourcecode:: json
-
-     {
-         "code": 200,
-         "reason": "Success",
-         "result": [
-            {
-               "base": {
-                  "symbol": "WETH",
-                  "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                  "decimals": 18
-               },
-               "quote": {
-                  "symbol": "USDC",
-                  "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                  "decimals": 6
-               },
-               "price_denom": 1000000,
-               "reserve": 0,
-               "reserve_denom": 1000000,
-               "market": "WETH-USDC",
-               "minAmount": "30000000000000000",
-               "price": 1784000000,
-               "txFee": "22.5",
-               "timestamp": 1654828501286
-            },
-            {
-               "base": {
-                  "symbol": "WBTC",
-                  "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                  "decimals": 8
-               },
-               "quote": {
-                  "symbol": "USDC",
-                  "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                  "decimals": 6
-               },
-               "price_denom": 1000000,
-               "reserve": 0,
-               "reserve_denom": 1000000,
-               "market": "WBTC-USDC",
-               "minAmount": "250000",
-               "price": 29967000000,
-               "txFee": "22.5",
-               "timestamp": 1654828501286
-            },
-            {
-               "base": {
-                  "symbol": "DAI",
-                  "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                  "decimals": 18
-               },
-               "quote": {
-                  "symbol": "USDC",
-                  "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                  "decimals": 6
-               },
-               "price_denom": 1000000,
-               "reserve": 0,
-               "reserve_denom": 1000000,
-               "market": "DAI-USDC",
-               "minAmount": "40000000000000000000",
-               "price": 999900,
-               "txFee": "22.5",
-               "timestamp": 1654828501286
-            },
-            {
-               "base": {
-                  "symbol": "USDT",
-                  "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-                  "decimals": 6
-               },
-               "quote": {
-                  "symbol": "USDC",
-                  "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                  "decimals": 6
-               },
-               "price_denom": 1000000,
-               "reserve": 0,
-               "reserve_denom": 1000000,
-               "market": "USDT-USDC",
-               "minAmount": "40000000",
-               "price": 999200,
-               "txFee": "22.5",
-               "timestamp": 1654828501286
-            }
-         ]
-}
-
-
-Specific Market Info
-+++++++++++++++++++++
-
+.. http:get::  /market
 .. http:get::  /market/(string:market_id) 
 
 
 :Parameters:
 
-   * **market_id** (*string*) -- ``listing market id``.
+   * **market_id** (*string*) -- ``listed market id``.
+
 
 
 **Response**:
@@ -181,29 +81,20 @@ Place Order
 
 
 
-.. note::
-   
-   :Terminology:
-      .. figure:: static/lprice.png
-         :align: center
-         :figwidth: 100%
-
-      * **lprice** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
-
 **Resquest**:
    .. sourcecode:: json
       
       // 1.5 WBTC ask order 
       {
-         "order":{
-            "account":"YOUR_ADDRESS",
-            "tokenIn":"0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-            "tokenOut":"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "amout":"150000000", // 1.5 WBTC (WBTC decimal: 8)
-            "lprice":"31500000000" // 31,500 usdc
+         "order": {
+            "account": "YOUR_ADDRESS",
+            "tokenIn": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+            "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "amout": "150000000", // 1.5 WBTC (WBTC decimal: 8)
+            "lprice": "31500000000" // 31,500 usdc
          },
-         "signature":"signed signature",
-         "unwrap":"0"
+         "signature": "signed signature",
+         "unwrap": "0"
       }
 
 
@@ -211,9 +102,9 @@ Place Order
    .. sourcecode:: json
 
       {
-         "code":200,
-         "reason":"Success",
-         "result":"{order}:1" // OrderKey
+         "code": 200,
+         "reason": "Success",
+         "result": "{order}:1" // OrderKey
       }
 
 
@@ -225,6 +116,8 @@ Place Order
       import { ethers, Wallet } from 'ethers'	
       import { TypedDataField } from '@ethersproject/abstract-signer'	
       import { JsonRpcProvider } from '@ethersproject/providers'	
+
+
       const OrderTypeFields = [	
          { name: 'account', type: 'address' },	
          { name: 'tokenIn', type: 'address' },	
@@ -232,6 +125,7 @@ Place Order
          { name: 'amount', type: 'uint256' },	
          { name: 'lprice', type: 'uint256' }	
       ]	
+
       const placeOrder = async (tokenIn: string, tokenOut: string, amount: string, lprice: number, unwrap: number) => {	
          const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))	
          const order = { account: wallet.address, tokenIn, tokenOut, amount, lprice }	
@@ -242,7 +136,9 @@ Place Order
          const data = { order, signature, unwrap }	
          return axios({ method: 'POST', url: 'https://api-eth.osc.finance/order', data })	
       }	
+
       const toLprice = (price: number, precision: number): number => parseFloat(price.toFixed(precision)) * 1_000_000	
+
       /**	
       * Sell 1.5 WBTC with lprice $31,500	
       *	
@@ -275,9 +171,9 @@ Cancel Order
     .. sourcecode:: json
 
       {
-         "code":200,
-         "reason":"Success",
-         "result":true
+         "code": 200,
+         "reason": "Success",
+         "result": true
       }
 
 

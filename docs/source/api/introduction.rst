@@ -31,6 +31,9 @@ POLYGON
 All endpoints return either a JSON object or array.
 All time and timestamp related fields are in milliseconds.
 
+
+
+
 HTTP Return Codes
 -----------------
 
@@ -58,24 +61,26 @@ When the api count exceeds the limit, you will receive a 429 error. Please check
 
 
 
-WebSocket Heartbeat(ping/pong)
-------------------------------
+Terminology
+-----------
 
-oscillo websocket's heartbeat interval is ``30_000 ms``, 
-WS clients have to send the reponse(pong) to keep the connection alive or the connection will be broken
+.. note::
+   
+   :Terminology:
+      .. figure:: static/lprice.png
+         :align: center
+         :figwidth: 100%
+         :width: 200px
+
+      * **lprice** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
 
 
-.. _address:
+.. _contract:
 
-Address & Listing
-=================
+Contract
+========
 
-
-
-ETHEREUM
---------
-
-oscillo Contract
+Contract
     ===================== ====================================================== 
     Contract               Address                   
     ===================== ====================================================== 
@@ -85,49 +90,38 @@ oscillo Contract
     ===================== ====================================================== 
 
 
-Listing Market
-    ============================ ====================================================== ======================================================
-      Market_ID                     Base Token Address                                      Quote Token Address
-    ============================ ====================================================== ======================================================
-      WBTC-USDC                   0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      WETH-USDC                   0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      DAI-USDC                    0x6B175474E89094C44Da98b954EedeAC495271d0F              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      USDT-USDC                   0xdAC17F958D2ee523a2206206994597C13D831ec7              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-    ============================ ====================================================== ======================================================
 
+.. _listing:
 
-POLYGON
--------
-
-
-oscillo Contract
-    ===================== ====================================================== 
-    Contract               Address                   
-    ===================== ====================================================== 
-    Exchange               0xCD2203534539Ac6b82d2D21B8575fe0F8Ca42Ccf          
-    OSCToken               0x7e00AecaBA5df64e9FeFAb55aC6B3F58100e79E2  
-    Distributor            0x3103683332086a746835655F656141cD5582a008         
-    ===================== ====================================================== 
-
-
-Listing Market
-    ===================== ====================================================== ======================================================
-    Market_ID             Base Token Address                                      Quote Token Address
-    ===================== ====================================================== ======================================================
-      WBTC-USDC             0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-      WETH-USDC             0x7ceb23fd6bc0add59e62ac25578270cff1b9f619              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-      WMATIC-USDC           0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-      DAI-USDC              0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-      USDT-USDC             0xc2132d05d31c914a87c6611c10748aeb04b58e8f              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
-    ===================== ====================================================== ======================================================
-
-
-
-
-
+Listing
+=======
 
     .. note::
 
       :In Market:
          * **Base Token** -- Refers to the asset that is the quantity. For the WBTC-USDC Market, WBTC would be the base token.
          * **Quote Token** -- Refers to the asset that is the price. For the WBTC-USDC Market, USDC would be the quote token.
+
+
+Ethereum
+    ===================== ====================================================== ======================================================
+    Market ID             Base Token Address                                      Quote Token Address
+    ===================== ====================================================== ======================================================
+    WBTC-USDC             0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+    WETH-USDC             0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+    DAI-USDC              0x6B175474E89094C44Da98b954EedeAC495271d0F              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+    USDT-USDC             0xdAC17F958D2ee523a2206206994597C13D831ec7              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+    ===================== ====================================================== ======================================================
+
+
+Polygon
+    ===================== ====================================================== ======================================================
+    Market ID             Base Token Address                                      Quote Token Address
+    ===================== ====================================================== ======================================================
+    WBTC-USDC             0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+    WETH-USDC             0x7ceb23fd6bc0add59e62ac25578270cff1b9f619              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+    WMATIC-USDC           0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+    DAI-USDC              0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+    USDT-USDC             0xc2132d05d31c914a87c6611c10748aeb04b58e8f              0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+    ===================== ====================================================== ======================================================
+
