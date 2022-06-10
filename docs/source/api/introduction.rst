@@ -52,13 +52,14 @@ Rate Limits
 oscillo rate limiters defined about REST api calls.
 When the api count exceeds the limit, you will receive a 429 error. Please check the following rate Limit rules.
 
-    ===================== =========================== =======================
+===================== =========================== =======================
     RATE LIMIT             Duration(milliseconds)       Max Count
-    ===================== =========================== =======================
+===================== =========================== =======================
     api Limiter            15 * 60 * 1000               1500
-    ===================== =========================== =======================
+===================== =========================== =======================
 
 
+.. _terminology:
 
 Terminology
 -----------
@@ -68,11 +69,12 @@ Terminology
     :figwidth: 100%
     :width: 200px
 
-* **lprice** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
-* **reserve** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
-* **precision** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
-* **minAmount** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
-* **txFee** -- the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
+* **price**: oscillo reference price. All order matches are based on the current oscillo price.
+* **lprice**: the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the lprice should be set at a disadvantage compared to the market price. When the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In the oscillo interface, lprice is displayed as only if [≥, ≤]
+* **precision**: the precision of lprice (floating point expression range).
+* **reserve**: This is the protocol reserve of the market deducted from your token received. The reserves are redistributed to participants through OSC tokens.
+* **minAmount**: minimum tradable amount. if the available order amount is less than minAmount, the order will be ignored. 
+* **txFee**: The gas cost of executors performing transactions on your behalf. It is deducted from your token received.
 
 
 
@@ -104,8 +106,8 @@ Listing
 .. note::
 
   :In Market:
-    * **Base Token** -- Refers to the asset that is the quantity. For the WBTC-USDC Market, WBTC would be the base token.
-    * **Quote Token** -- Refers to the asset that is the price. For the WBTC-USDC Market, USDC would be the quote token.
+    * **Base Token**: Refers to the asset that is the quantity. For the WBTC-USDC Market, WBTC would be the base token.
+    * **Quote Token**: Refers to the asset that is the price. For the WBTC-USDC Market, USDC would be the quote token.
 
 
 Ethereum

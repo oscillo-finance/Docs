@@ -2,10 +2,10 @@ REST API
 ********
 
 
-Rest API consists of market-side and order-side
+Available REST endpoints ``market``, ``order``
 
-* In Market-side: Retrive oscillo general information of markets
-* In Order-side: Place Order and Cancel Order 
+* market -- Market information
+* order -- Place or cancel order
 
 -----
 
@@ -22,7 +22,7 @@ Market Info
 
 :Parameters:
 
-   * **market_id** (*string*) -- ``listed market id``.
+   * **market_id** (*string*) -- Listed market id
 
 
 
@@ -43,13 +43,13 @@ Market Info
                "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
                "decimals": 6
             },
+            "price": 29963000000,
             "price_denom": 1000000,
             "reserve": 0,
             "reserve_denom": 1000000,
             "precision": 0,
             "market": "WBTC-USDC",
             "minAmount": "250000",
-            "price": 29963000000,
             "txFee": "22.5",
             "timestamp": 1654828480074
          }
@@ -69,32 +69,28 @@ Place Order
 
 :Parameters:
 
-   * **order** (*object*) -- 
-            - account(*string*): user wallet address
-            - tokenIn(*string*): input token address
-            - tokenOut(*string*): output token address
-            - amount(*string*): trading amount(base token amount)
-            - lprice(*number*): Guaranteed Price. Orders are traded at a favorable price than lprice. The lprice denominator is 1e6.
-
-   * **signature** (*string*) -- Ref `EIP-712 specification`_ , `SignTypedData`_ 
-
-   * **unwrap** (*number: 0 or 1*) -- Only for wrapped token bid order, would choose wrappred (0) or native (1). For example, Bid order of WMATIC-USDC market in Polygon Network or WETH-USDC market in Ethereum Network
-
+   * **order** (*object*)
+            - account(*string*) -- User wallet address
+            - tokenIn(*string*) -- Input token address
+            - tokenOut(*string*) -- Output token address
+            - amount(*string*) -- Trading amount (base token amount)
+            - lprice(*number*) -- Guaranteed Price. Orders are traded at a favorable price than lprice. The lprice denominator is 1e6. See :ref:`Terminology <terminology>`
+   * **signature** (*string*) -- See `EIP-712 specification`_ , `SignTypedData`_ 
+   * **unwrap** (*number: 0 or 1*) -- Bid only option for native coins like ETH or MATIC. Set to 1 to receive it in unwrapped native coins. 0 otherwise.
 
 
 **Resquest**:
    .. sourcecode:: json
       
-      // 1.5 WBTC ask order 
       {
          "order": {
             "account": "YOUR_ADDRESS",
             "tokenIn": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
             "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "amout": "150000000", // 1.5 WBTC (WBTC decimal: 8)
+            "amout": "150000000", // 1.5 WBTC (decimals: 8)
             "lprice": "31500000000" // 31,500 usdc
          },
-         "signature": "signed signature",
+         "signature": "YOUR_SIGNATURE",
          "unwrap": "0"
       }
 
@@ -162,9 +158,9 @@ Cancel Order
 
 :Parameters:
 
-   * **account** (*string*) -- User Address.
-   * **signature** (*string*) -- `EIP-712 specification`_ , `SignTypedData`_ 
-   * **key** (*string*) -- orderKey
+   * **account** (*string*) -- User wallet address
+   * **signature** (*string*) -- See `EIP-712 specification`_ , `SignTypedData`_ 
+   * **key** (*string*) -- OrderKey returned from placeOrder
 
 
 
@@ -204,6 +200,7 @@ Cancel Order
 
 
 
+.. _Terminology: 
 .. _EIP-712 specification: https://eips.ethereum.org/EIPS/eip-712
 .. _SignTypedData: https://docs.ethers.io/v5/api/signer/#Signer-signTypedData
    

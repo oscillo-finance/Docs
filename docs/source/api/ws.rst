@@ -1,11 +1,12 @@
 WEBSOCKET
 *********
 
-oscillo has 3 websocket channels [orderbook, order, market]
 
-1. market: General Information of All Markets
-2. orderbook: Price and Depth Size Data
-3. order: Order Stream Data of target address
+Available websocket channels ``market``, ``orderbook``, ``order``, 
+
+* market -- Market information
+* orderbook -- Price and depth size
+* order -- Order data
    
 -----
 
@@ -18,13 +19,21 @@ Subscribe/Unsubscribe
 Subscribe
 +++++++++++
 
+
+:Parameters:
+
+   * **type** (*string*) -- subscribe
+   * **channel** (*string*) -- One of ``market``, ``orderbook``, ``order``
+   * **interest** (*string*) -- MarketID for market and orderbook subscription, Wallet Address for order subscription
+
+
 **Request**:
     .. sourcecode:: json
 
       {
          "type": "subscribe",
-         "channel": "market",  // 'market' or 'orderbook' or 'order'
-         "interest": "WBTC-USDC"  // 'market_id' for market and orderbook channels, 'user address' for order channel 
+         "channel": "market",
+         "interest": "WBTC-USDC"
       }
 
 
@@ -37,27 +46,27 @@ Subscribe
          "channel": "market",
          "interest": "WBTC-USDC",
          "timestamp": 1654767820713,
-         "contents": { // recent market data
+         "contents": {
             "base": {
                "symbol": "WBTC",
-               "address": "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
+               "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
                "decimals": 8
             },
             "quote": {
                "symbol": "USDC",
-               "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+               "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
                "decimals": 6
             },
+            "price": 30586000000,
             "price_denom": 1000000,
             "reserve": 1000,
             "reserve_denom": 1000000,
             "precision": 0,
             "market": "WBTC-USDC",
             "minAmount": "1000",
-            "price": 30586000000,
             "txFee": "0.0113",
             "timestamp": 1654767820709
-            }
+         }
       }
 
 
@@ -71,7 +80,7 @@ Subscribe
          "channel": "orderbook",
          "interest": "WBTC-USDC",
          "timestamp": 1654767820714,
-         "contents": { // orderbook snapshot data
+         "contents": {
             "asks": [ 
                { "price": 30700000000, "size": "50000000" },
                { "price": 30600000000, "size": "100000000" },
@@ -93,13 +102,13 @@ Subscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "subscribed",
          "channel": "order",
-         "interest": "user address",
+         "interest": "YOUR_ADDRESS",
          "timestamp": 1654767820712,
-         "contents": [  // order snapshot data
+         "contents": [
             {
                "key": "{order}:21",
-               "account": "user address",
-               "market": "dWBTC-dUSDC",
+               "account": "YOUR_ADDRESS",
+               "market": "WBTC-USDC",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
@@ -110,8 +119,8 @@ Subscribe
             },
             {
                "key": "{order}:13",
-               "account": "user address",
-               "market": "dWBTC-dUSDC",
+               "account": "YOUR_ADDRESS",
+               "market": "WBTC-USDC",
                "side": 20,
                "lprice": 30332000000,
                "status": 1,
@@ -126,13 +135,22 @@ Subscribe
 Unsubscribe
 +++++++++++++
 
+
+:Parameters:
+
+   * **type** (*string*): unsubscribe
+   * **channel** (*string*): One of ``market``, ``orderbook``, ``order``
+   * **interest** (*string*): MarketID for market and orderbook subscription, Wallet Address for order subscription
+
+
+
 **Request**:
     .. sourcecode:: json
 
       {
          "type": "unsubscribe",
-         "channel": "market",  // 'market' or 'orderbook' or 'order'
-         "interest": "WBTC-USDC"  // 'market_id' for market and orderbook channels, 'user address' for order channel 
+         "channel": "market",
+         "interest": "WBTC-USDC"
       }
 
 **Response**:
@@ -141,8 +159,8 @@ Unsubscribe
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "unsubscribed",
-         "channel": "requested channel",  // 'market' or 'orderbook' or 'order'
-         "interest": "requested interest",  // 'market_id' for market and orderbook channels, 'user address' for order channel 
+         "channel": "market",
+         "interest": "WBTC-USDC",
          "timestamp": 1654767820714
       }
 
@@ -150,37 +168,37 @@ Unsubscribe
 Market
 ======
 
-publish message
-+++++++++++++++
+Payload
++++++++
 
 **Response(type: update)**:
     .. sourcecode:: json
 
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
-         "type": "update", // only update
+         "type": "update", // update only
          "channel": "market",
-         "interest": "WBTC-USDC",  // market-id
-         "contents": {  // updated data
-               "base": {
-                  "symbol": "WBTC",
-                  "address": "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
-                  "decimals": 8
+         "interest": "WBTC-USDC",
+         "contents": {
+               "base":{
+                  "symbol":"WBTC",
+                  "address":"0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+                  "decimals":8
                },
-               "quote": {
-                  "symbol": "USDC",
-                  "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
-                  "decimals": 6
+               "quote":{
+                  "symbol":"USDC",
+                  "address":"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                  "decimals":6
                },
-               "price_denom": 1000000,
-               "reserve": 1000,
-               "reserve_denom": 1000000,
+               "price":30986000000,
+               "price_denom":1000000,
+               "reserve":1000,
+               "reserve_denom":1000000,
                "precision": 0,
-               "market": "WBTC-USDC",
-               "minAmount": "1000",
-               "price": 30986000000,
-               "txFee": "0.0113",
-               "timestamp": 1654767820709
+               "market":"WBTC-USDC",
+               "minAmount":"1000",
+               "txFee":"0.0113",
+               "timestamp":1654767820709
          }
          "timestamp": 1654767820714
       }
@@ -189,21 +207,19 @@ publish message
 Orderbook
 =========
 
-publish message
-+++++++++++++++
+Payload
++++++++
 
 **Response(type: update)**:
     .. sourcecode:: json
 
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
-         "type": "update", // only update
+         "type": "update", // update only
          "channel": "orderbook",
-         "interest": "WBTC-USDC",  // market-id
-         "contents": {  // only changed data
-              "asks": [
-                 { "price": 30700000000, "size": "10000000" } 
-               ]
+         "interest": "WBTC-USDC",
+         "contents": {
+              "asks": [{ "price": 30700000000, "size": "10000000" }] // size 0 for removal
          }
          "timestamp": 1654767820714
       }
@@ -211,24 +227,23 @@ publish message
 Order
 =====
 
-publish message
-+++++++++++++++
+Payload
++++++++
 
 **Response(type: add|remove|update)**:
     .. sourcecode:: json
 
       // type: add  
-      // condition: User created new order
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "add",
          "channel": "order",
-         "interest": "user address",  // user address-id
-         "contents": [ // removed order info
+         "interest": "user address",
+         "contents": [
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "dWBTC-dUSDC",
+               "market": "WBTC-USDC",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
@@ -242,17 +257,16 @@ publish message
       }
 
       // type: remove  
-      // condition: order was matched or recover 
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "remove",
          "channel": "order",
-         "interest": "user address",  // user address-id
-         "contents": [ // updated order info
+         "interest": "user address",
+         "contents": [
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "dWBTC-dUSDC",
+               "market": "WBTC-USDC",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
@@ -266,17 +280,16 @@ publish message
       }
 
       // type: update
-      // condition: new order was created
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "update",
          "channel": "order",
-         "interest": "user address",  // user address-id
-         "contents": [ // created order info
+         "interest": "user address",
+         "contents": [
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "dWBTC-dUSDC",
+               "market": "WBTC-USDC",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
