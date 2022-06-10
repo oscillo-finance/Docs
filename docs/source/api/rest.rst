@@ -284,21 +284,27 @@ Cancel Order
 .. code-block:: TypeScript
    :caption: *Cancel Order Sample*
 
-   interface TypedDataField {
-      name: string;
-      type: string;
-   }
-   
-   const CancelTypeFields = [{ name: 'key', type: 'string' }]
+      import axios from 'axios'
+      import { ethers, Wallet } from 'ethers'
+      import { TypedDataField } from '@ethersproject/abstract-signer'
+      import { JsonRpcProvider } from '@ethersproject/providers'
 
-   async cancelOrder(key: string) {
-        const domain = { name: 'oscillo', version: 'v1', chainId: OSC.POLYGON.CHAIN_ID, verifyingContract: OSC.POLYGON.EXCHANGE_ADDRESS }
-        const types: Record<string, Array<TypedDataField>> = { Cancel: CancelTypeFields }
-        const signature = await this._wallet._signTypedData(domain, types, { key })
-        const data = { key, signature: signature, account: this._wallet.address }
-        
-        return axios({ method: 'DELETE', url: `${OSC.POLYGON.REST_ENDPOINT}/order`, data })
-    }
+
+      const CancelTypeFields = [{ name: 'key', type: 'string' }]
+
+      const cancelOrder = async (key: string) => {
+         const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))
+         
+         const domain = { name: 'oscillo', version: 'v1', chainId: 1, verifyingContract: '0xCD2203534539Ac6b82d2D21B8575fe0F8Ca42Ccf' }
+         const types: Record<string, Array<TypedDataField>> = { Cancel: CancelTypeFields }
+         const signature = await wallet._signTypedData(domain, types, { key })
+         
+         const data = { key, signature: signature, account: wallet.address }
+         return axios({ method: 'DELETE', url: 'https://api-eth.osc.finance/order', data })
+      }
+
+      cancelOrder('YOUR_ORDER_KEY')
+
 
 
 .. _EIP-712 specification: https://eips.ethereum.org/EIPS/eip-712
