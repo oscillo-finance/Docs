@@ -16,10 +16,10 @@ Here are open orders
 a. Your position in the market
 
 b. There are three statuses for an order; Pending, Filled, and Canceled.
-    - Pending: searching the orders with your condition
+    - Active: searching the orders with your condition
     - Filled: complete the trading
     - Canceled: the order is canceled.
-c. Settled means that oscillo found matching orders with your condition. it is right before 'Filled' status. When the order is settled, you can't cancel the order. But if the total amount is not settled, you can cancel partially.
+c. 'Filled' shows the amount that trading is completed.  'Amount' minus 'Filled' is the remaining order.
 d. You can see your trade history with this button.
 
 
