@@ -54,10 +54,15 @@ When the api count exceeds the limit, you will receive a 429 error. Please check
     RATE LIMIT             Duration(milliseconds)       Max Count
     ===================== =========================== =======================
     api Limiter            15 * 60 * 1000               1500
-    verbose Limiter        10 * 60 * 1000               3
     ===================== =========================== =======================
 
 
+
+WebSocket Heartbeat(ping/pong)
+------------------------------
+
+oscillo websocket's heartbeat interval is ``30_000 ms``, 
+WS clients have to send the reponse(pong) to keep the connection alive or the connection will be broken
 
 
 .. _address:
@@ -81,14 +86,14 @@ oscillo Contract
 
 
 Listing Market
-    ===================== ====================================================== ======================================================
-    Market_ID             Base Token Address                                      Quote Token Address
-    ===================== ====================================================== ======================================================
-      WBTC-USDC             0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      WETH-USDC             0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      DAI-USDC              0x6B175474E89094C44Da98b954EedeAC495271d0F              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-      USDT-USDC             0xdAC17F958D2ee523a2206206994597C13D831ec7              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
-    ===================== ====================================================== ======================================================
+    ============================ ====================================================== ======================================================
+      Market_ID                     Base Token Address                                      Quote Token Address
+    ============================ ====================================================== ======================================================
+      WBTC-USDC                   0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+      WETH-USDC                   0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+      DAI-USDC                    0x6B175474E89094C44Da98b954EedeAC495271d0F              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+      USDT-USDC                   0xdAC17F958D2ee523a2206206994597C13D831ec7              0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+    ============================ ====================================================== ======================================================
 
 
 POLYGON

@@ -3,19 +3,19 @@ WEBSOCKET
 
 oscillo has 3 websocket channels [orderbook, order, market]
 
-1. market: listing market general infomation
-2. orderbook: ask side & bid side price and depth size info 
-3. order:  order infomation of specific address
+1. market: General Information of All Markets
+2. orderbook: Price and Depth Size Data
+3. order: Order Stream Data of target address
    
 -----
 
 
 
-Subscribing/Unsubscribing to streams
-====================================
+Subscribe/Unsubscribe
+=====================
 
 
-Subscribing
+Subscribe
 +++++++++++
 
 **Request**:
@@ -122,7 +122,7 @@ Subscribing
          ]
       }
 
-Unsubscribing
+Unsubscribe
 +++++++++++++
 
 **Request**:
@@ -262,7 +262,7 @@ publish message
       }
 
       // type: update
-      // condition: when new order was created
+      // condition: new order was created
       {
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "update",
