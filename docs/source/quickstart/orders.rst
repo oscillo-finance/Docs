@@ -13,13 +13,13 @@ Here are open orders
     :align: center
     :figwidth: 100%
 
-a. Your position in the market
+a. Your position
 
 b. There are three statuses for an order; Active, Filled, and Canceled.
-    - Active: searching the orders with your condition
-    - Filled: complete the trading
-    - Canceled: the order is canceled.
-c. 'Filled' shows the amount that trading is completed.  'Amount' minus 'Filled' is the remaining order.
+    - Active: searching for orders that go along with your trigger condition
+    - Filled: order fulfilled
+    - Canceled: the order is canceled
+c. 'Filled' shows the amount that order is fulfilled.  'Amount' minus 'Filled' is the remaining order.
 d. You can see your trade history with this button.
 
 

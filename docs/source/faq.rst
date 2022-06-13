@@ -3,18 +3,18 @@ FAQ
 ***
 
 
-oscillo is not a DEX?
+Is Oscillo not a DEX?
 #####################
 
-Strictly speaking, oscillo is a kind of DEX. oscillo has the model that supports off-chain order book and on-chain settlement.
-People usually come into their heads that DEX = AMM. so we use the catchphrase 'Always better than DEX' to express that oscillo is much better than AMMs.
+Oscillo is a DEX. However, Oscillo has a model that supports off-chain order books and on-chain settlement.
+The belief that a DEX = an AMM is ingrained in many people’s heads. DEX = AMM. Therefore, we use the catchphrase 'Always better than DEX' to express that oscillo is much better than AMMs.
 
 
 
 Isn't this free? What is a transaction fee?
 ###########################################
 
-oscillo sends the transaction on behalf of you. this is called gasless transaction(or meta-transaction). oscillo pays the gas fee first and requests for repaying this under the name of '**transaction fee**'.
+Unlike other DEXes, Oscillo pays for the transaction on your behalf.oscillo sends the transaction on behalf of you. This is called a gasless transaction(or meta-transaction). Oscillo pays the gas fee first and so, the “transaction fee” refers to the user’s repayment of this gas fee to Oscillo.
 
 
 
@@ -22,57 +22,54 @@ What is MEV?
 ############
 
 Maximal extractable value (MEV) refers to the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
-Someone can attack by abusing MEV opportunities.
+Black hats can abuse these opportunities and attack a protocol.
 
 
 
-How oscillo supports MEV-protection?
+
+How Oscillo supports MEV-protection?
 ####################################
 
-Trades in oscillo are just token transfers that the buyer and seller both agreed on. The order of transactions in a block doesn't change the transfer amount, so the buyer and seller are free from MEV.
+Trades in oscillo are simply token transfers that the buyer and seller both agreed on. The order of transactions in a block does not change the transfer amount, therefore, users are not at risk of MEV attacks
 
 
-
-How oscillo supports no slippage?
+How Oscillo supports no slippage?
 #################################
 
-oscillo doesn't use liquidity pools of AMM. So there's no slippage however the amount you trade.
-
+Unlike other Dexes, oscillo does not  use liquidity pools of AMMs. Therefore, there is  no slippage no matter the amount you desire to trade.
 
 
 What is Limit-price(lprice)?
 ############################
 
-Limit-price(lprice) is the guaranteed price and the worst price that can be an acceptable condition of the order. For quick execution of orders, your lprice should be set at a disadvantage compared to the market price. For example, when the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In oscillo interface, lprice is displayed as "only if [≥ or ≤ number]".
+Limit-price(lprice) is the minimum price at which the token will be sold or th. , your lprice should be set at a disadvantage compared to the market price. For example, when the market price of WBTC is $30,000, selling lprice should be less than $30,000, and buying lprice should be above $30,000. In Oscillo’s interface, lprice is displayed as "only if [≥ or ≤ number]".
 
 
 What is open order?
 ###################
 
-It is the order pending to find its matches.
+It is a pending order not has been matched yet.
 
 
-Does oscillo support 'token-usdc' pairs only?
+Does Oscillo support 'token-usdc' pairs only?
 #############################################
 
-Yes, you can only buy tokens with USDC for a while.
+Yes, for now you will only be able to buy tokens with USDC.
 
 
 I submitted an order just once, but why did the matches occur more than once?
 #############################################################################
 
-When my order amount isn't the same as the order amount of the other side, the matches can occur more than once. But the transaction fee will be charged only for the initial match, later matches are free.
+If the buying amount does not match the selling amount, matches must occur more than once in order to fulfill your entire order, and vice versa.   . However, the  transaction fee will only be charged for the initial match, later matches are free.
 
 
-
-Is oscillo safe?
+Is Oscillo safe?
 ################
 
-This is a utility we made for ourselves, we are using this most. And we are disclosing all the code transparently on our Github(). So if you are a trader, please check our code and utilize this.
+Oscillo is a utility we made for all crypto traders, including ourselves. It is a protocol that we will also use and be invested in. Therefore, the safety of Oscillois of utmost importance to us. . All of our code is disclosed transparently on our github.So if you are a trader, please feel free to check our code and confirm for yourself.
 
 
-
-Who made oscillo?
+Who made Oscillo?
 #################
 
-We are crypto traders. We made oscillo for trading cheaper without risk in the middle of arbitraging between DEX and CEX.
+We're a team of crypto traders and smart contract engineers. We've been working in DeFi since DeFi summer in 2020. 

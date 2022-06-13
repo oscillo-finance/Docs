@@ -16,23 +16,23 @@ Here’s the expert mode.
 
 :raw-html:`<br />`
 
-a. You can enter the limit price directly or click the plus or minus button to adjust the limit price.
+a. You can click the plus or minus button to adjust the limit price or enter it manually.
 
-b. You can see the market depth.
+b. Market depth
 
 
 Step
 ----
 
-#. Enter the limit price and amount you want to trade.
+#. Enter the limit price and amount of selected token that you want to trade.
 
-#. Click the 'BUY' or 'SELL' button.
+#. Click 'BUY' or 'SELL' button.
 
 #.  Check your trigger condition and transaction fee.
 
-    * You should keep the amount you order in your wallet or your order will be canceled.
+    * Keep the ordered amount  in your wallet or your order will be canceled.
 
-    - The transaction fee is the gas fee. This fee will be subtracted from the token you will receive automatically.
+    - The transaction fee is the gas fee. This fee will be automatically subtracted from the tokens you receive from buying or selling.
 
 .. image:: static/buy.png
     :width: 49%
@@ -42,4 +42,4 @@ Step
 
 :raw-html:`<br />`
 
-4. You receive the signature request from 'osc.finance' at the wallet app. After confirming it, your order will be seen on the open order list.
+4. You will receive a signature request from 'osc.finance' in the wallet app. After confirming it, you will be able to see your order on the open order list.

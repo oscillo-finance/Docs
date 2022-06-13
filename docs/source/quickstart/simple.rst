@@ -13,18 +13,18 @@ Here's the trading interface
     :align: center
     :figwidth: 100%
 
-a. You can choose the token you trade.
+a. Token selection
 b. These two numbers mean buy(bid, green) side token and sell(ask, red) side token.
-c. You can switch the mode from simple to expert.
-d. This is the input area of the amount you trade. A minimum amount may be changed because of the gas fee.
-e. This is your wallet balance.
-f. This is the latest price of the token.
-g. This graph shows the hourly price change.
+c. Simple mode to expert mode or vice versa
+d. Where you input the desired amount of selected token to trade. Minimum amount may change depending on gas fee.
+e. Your wallet balance
+f. Latest price of selected token
+g. Hourly price change of selected token
 
 Step
 ----
 
-1. Click 'Connect Wallet' and choose the wallet you use.
+1. Click 'Connect Wallet' and choose preferred wallet.
 
 .. figure:: static/before_wallet_connect.png
     :align: center
@@ -32,7 +32,7 @@ Step
 
 :raw-html:`<br />`
 
-- We currently support Metamask, Trust Wallet, Math Wallet, and Walletconnect.
+- We currently support Metamask, Trust Wallet, Math Wallet, and WalletConnect.
 
 .. figure:: static/choose_wallet.png
     :align: center
@@ -40,7 +40,7 @@ Step
 
 :raw-html:`<br />`
 
-2. Click '▼' to choose the token you trade.
+2. Click '▼' to select token.
 
 .. figure:: static/dwbtc_click.png
     :align: center
@@ -48,7 +48,7 @@ Step
 
 :raw-html:`<br />`
 
-- dWBTC, dWETH, and dUSDC are just testing tokens with no value.
+- dWBTC, dWETH, and dUSDC are testing tokens with no real value.
 
 .. figure:: static/choose_token.png
     :align: center
@@ -56,13 +56,13 @@ Step
 
 :raw-html:`<br />`
 
-3.  Enter the amount you trade and click the 'BUY' or 'SELL' button.
+3.  Enter your desired amount of selected token and click the 'BUY' or 'SELL' button.
 
 4.  Check your trigger condition and transaction fee.
 
-    * You should keep the amount you order in your wallet or your order will be canceled.
+    * Keep the ordered amount in your wallet or order will be canceled.
 
-    * The transaction fee is the gas fee. This fee will be subtracted from the token you will receive automatically.
+    * The transaction fee is the gas fee. This fee will be automatically subtracted from the tokens you receive from buying or selling.
 
 .. image:: static/buy.png
     :width: 49%
@@ -72,7 +72,7 @@ Step
 
 :raw-html:`<br />`
 
-5. You receive the signature request from 'osc.finance' at the wallet app. After confirming it, your order will be seen on the open order list.
+5. You will receive a signature request from 'osc.finance' in the wallet app. After confirming it, you will be able to see your order on the open order list.
 
 
 
