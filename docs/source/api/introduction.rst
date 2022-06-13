@@ -108,7 +108,7 @@ oscillo contract
   ============================== ================================================= 
       .. centered:: Contract      .. centered:: Address                   
   ============================== =================================================
-      .. centered:: Exchange       0xCD2203534539Ac6b82d2D21B8575fe0F8Ca42Ccf          
+      .. centered:: Exchange       0x84B676e883d8Ee7Ca37160F2b21E0c5D6B81D0cA
       .. centered:: OSCToken       0x7e00AecaBA5df64e9FeFAb55aC6B3F58100e79E2  
       .. centered:: Distributor    0x3103683332086a746835655F656141cD5582a008         
   ============================== ================================================= 
