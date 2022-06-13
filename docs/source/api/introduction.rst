@@ -59,6 +59,14 @@ When the api count exceeds the limit, you will receive a 429 error. Please check
 ===================== =========================== =======================
 
 
+WebSocket Heartbeat(ping/pong)
+------------------------------
+
+oscillo websocket's heartbeat interval is ``30_000 ms``, 
+WS clients have to send the reponse(pong) to keep the connection alive or the connection will be broken.
+
+
+
 .. _terminology:
 
 Terminology
