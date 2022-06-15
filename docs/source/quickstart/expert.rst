@@ -28,12 +28,11 @@ Step
 
 #. Click 'BUY' or 'SELL' button.
 
-#.  Check your trigger condition and transaction fee.
+#.  Check your trigger condition and fees.
 
     * Keep the ordered amount  in your wallet or your order will be canceled.
 
-    - The transaction fee is the gas fee. This fee will be automatically subtracted from the tokens you receive from buying or selling.
-
+    - Gas fee is paid by the executors performing transactions on your behalf. This fee will be automatically deducted from the tokens you receive from buying or selling.
 .. image:: static/buy.png
     :width: 49%
 .. image:: static/sell.png

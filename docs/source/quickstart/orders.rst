@@ -35,8 +35,5 @@ Step
     :align: center
     :figwidth: 100%
 
-2. Click the 'Confirm' button if you've checked your settled amount and the warning.
+2. Click the 'Confirm' button on the cancel modal if you've checked your already filled amount and the warning. (Cancellation is possible only for the quantity excluding the scheduled amount.)
 
-.. figure:: static/cancel_order_confirm.png
-    :align: center
-    :figwidth: 100%

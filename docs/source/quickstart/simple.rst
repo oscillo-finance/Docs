@@ -24,7 +24,7 @@ g. Hourly price change of selected token
 Step
 ----
 
-1. Click 'Connect Wallet' and choose preferred wallet.
+1. Click 'Connect Wallet' and choose a preferred wallet.
 
 .. figure:: static/before_wallet_connect.png
     :align: center
@@ -58,11 +58,11 @@ Step
 
 3.  Enter your desired amount of selected token and click the 'BUY' or 'SELL' button.
 
-4.  Check your trigger condition and transaction fee.
+4.  Check your trigger condition and fees.
 
     * Keep the ordered amount in your wallet or order will be canceled.
 
-    * The transaction fee is the gas fee. This fee will be automatically subtracted from the tokens you receive from buying or selling.
+    * Gas fee is paid by the executors performing transactions on your behalf. This fee will be automatically deducted from the tokens you receive from buying or selling.
 
 .. image:: static/buy.png
     :width: 49%
