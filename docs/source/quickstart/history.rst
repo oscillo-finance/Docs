@@ -18,7 +18,7 @@ c. Addresses of the buyer and seller
 Here's the match detail. You can see this page when you click on a trade
 
 
-.. figure:: static/match_detail.png
+.. figure:: static/match_detail2.png
     :align: center
     :figwidth: 100%
 
