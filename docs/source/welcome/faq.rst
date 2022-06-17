@@ -10,10 +10,10 @@ oscillo is a DEX. However, oscillo has a model that supports off-chain order boo
 The belief that a DEX = an AMM is ingrained in many people’s heads. DEX = AMM. Therefore, we use the catchphrase "Always better than DEX" to express that oscillo is much better than AMMs.
 
 
-Isn't this free? What is a gas fee?
+Isn't this free? What is a settlement fee?
 ###########################################
 
-Unlike other DEXes, oscillo pays for the transaction on your behalf. oscillo sends the transaction on behalf of you. This is called a gasless transaction(or meta-transaction). oscillo pays the gas fee first and so, the “Gas fee” refers to the user’s repayment of this gas fee to oscillo.
+Unlike other DEXes, oscillo pays for the transaction on your behalf. oscillo sends the transaction on behalf of you. This is called a gasless transaction(or meta-transaction). oscillo pays the gas fee first and so, the “Settlement fee” refers to the user’s repayment of this gas fee to oscillo.
 
 
 What is a trading fee?
