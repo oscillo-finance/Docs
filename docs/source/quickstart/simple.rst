@@ -64,7 +64,7 @@ Step
 
     * Settlement fee is paid by the executors performing transactions on your behalf. This fee will be automatically deducted from the tokens you receive from buying or selling.
 
-.. image:: static/sell2.png
+.. figure:: static/sell2.png
     :align: center
     :figwidth: 100%
 
