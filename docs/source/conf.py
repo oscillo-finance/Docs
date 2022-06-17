@@ -35,7 +35,8 @@ html_css_files = ['custom.css']
 
 html_theme = 'sphinx_book_theme'
 
-html_title = "oscillo"
+html_title = ""
+html_logo = "./logo.svg"
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
