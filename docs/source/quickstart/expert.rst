@@ -32,11 +32,11 @@ Step
 
     * Keep the ordered amount  in your wallet or your order will be canceled.
 
-    - Gas fee is paid by the executors performing transactions on your behalf. This fee will be automatically deducted from the tokens you receive from buying or selling.
-.. image:: static/buy.png
-    :width: 49%
-.. image:: static/sell.png
-    :width: 49%
+    * Settlement fee is paid by the executors performing transactions on your behalf. This fee will be automatically deducted from the tokens you receive from buying or selling.
+
+.. image:: static/sell2.png
+    :align: center
+    :figwidth: 100%
 
 
 :raw-html:`<br />`
