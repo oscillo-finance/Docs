@@ -9,7 +9,7 @@ Interface
 ---------
 Here are open orders
 
-.. figure:: static/open_order_part.png
+.. figure:: static/open_orders.png
     :align: center
     :figwidth: 100%
 
@@ -17,7 +17,7 @@ a. Your position
 
 b. There are three statuses for an order; Active, Filled, and Canceled.
     - Active: searching for orders that go along with your trigger condition
-    - Filled: order fulfilled
+    - Filled: the order is fulfilled
     - Canceled: the order is canceled
 c. 'Filled' shows the amount that order is fulfilled.  'Amount' minus 'Filled' is the remaining order.
 d. You can see your trade history with this button.
@@ -31,7 +31,7 @@ Step
 
 1. Click the 'CANCEL' button on the open order list.
 
-.. figure:: static/click_cancel.png
+.. figure:: static/cancel_order.png
     :align: center
     :figwidth: 100%
 
