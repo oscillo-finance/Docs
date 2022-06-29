@@ -1,12 +1,16 @@
 oscillo - Always better than DEX
 ===================================
 
-oscillo_ is a trading protocol with gasless transactions with an order book system similar to centralized exchanges. Traders are able to use gasless transactions to make limit orders. oscillo sends these transactions to the blockchain and pays the transaction fee. When using oscillo, traders do not have to provide native tokens such as ETH or MATIC for gas. Their assets remain in their wallet until the moment their order processes.
+oscillo_ is a P2P Matchmaking Protocol that puts price over everything. We aim to create a profitable trading environment that is friendly to crypto traders all around the world. In such a rapid and ever changing market, we want to become a place where all crypto traders can feel a sense of guarantee and safety. Now oscillo prioritizes value over time. We believe that it is important to put users’ funds before the time it takes to complete an order. Our matchmaking system highlights this belief. We also believe that eventually, the two aspects will balance out, because as more users are drawn in because of the value of our transactions, they will begin to take less time.
+
+To learn more about oscillo protocol, see this article here_.
 
 .. _oscillo: https://osc.finance
+.. _here: https://docs.osc.finance/en/latest/welcome/introduction.html
 
 
-Links
+
+Key Links
 -----
 
 - App: https://osc.finance
@@ -30,8 +34,9 @@ Links
    :maxdepth: 2
    :hidden:
 
-   quickstart/simple
-   quickstart/expert
+   quickstart/testnet
+   quickstart/auto
+   quickstart/custom
    quickstart/orders
    quickstart/history
 
