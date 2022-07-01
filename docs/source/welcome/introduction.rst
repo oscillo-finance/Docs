@@ -18,7 +18,7 @@ What makes oscillo unique?
 
 ----
 
-How does oscillo works?
+How does oscillo work?
 #######################
 
 Users create limit orders and sign the cryptographic signature in their wallet app as detailed in the `trading guide <https://docs.osc.finance/en/latest/quickstart/simple.html>`_. Once the user inputs a limit order, oscillo searches for a counterpart order matching the user’s trade conditions and matches are only executed at index price when the index price satisfies or is more profitable than the trigger conditions and then the order will be filled at the index price (more favorable prices can be generated if the index price is more profitable than the limit price). In order to make any changes to the order, it must be canceled and placed again. Users may cancel their order at any time before finding a match without incurring a penalty or gas fee.
