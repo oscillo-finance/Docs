@@ -158,11 +158,11 @@ Cancel Order
 
 :Parameters:
 
-   * **account** (*string*) -- User wallet address
+   * **cancel** (*object*)
+            - account(*string*) -- User wallet address
+            - key(*string*) --  OrderKey returned from placeOrder
    * **signature** (*string*) -- See `EIP-712 specification`_ , `SignTypedData`_ 
-   * **key** (*string*) -- OrderKey returned from placeOrder
-
-
+  
 
 **Response**:
     .. sourcecode:: json
