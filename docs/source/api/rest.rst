@@ -126,7 +126,7 @@ Place Order
       const placeOrder = async (tokenIn: string, tokenOut: string, amount: string, lprice: number, unwrap: number) => {	
          const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))	
          const order = { account: wallet.address, tokenIn, tokenOut, amount, lprice }	
-         const domain = { name: 'oscillo', version: 'v1', chainId: 1, verifyingContract: '0x84B676e883d8Ee7Ca37160F2b21E0c5D6B81D0cA' }	
+         const domain = { name: 'oscillo', version: 'v1', chainId: 1, verifyingContract: '0xBB0Cb9007ceF526cEdEc48FDc6D5f750641244f0' }	
          const types: Record<string, Array<TypedDataField>> = { Order: OrderTypeFields }	
          const signature = await wallet._signTypedData(domain, types, order)	
             
@@ -183,16 +183,19 @@ Cancel Order
       import { JsonRpcProvider } from '@ethersproject/providers'
 
 
-      const CancelTypeFields = [{ name: 'key', type: 'string' }]
+      const CancelTypeFields = [
+         { name: 'key', type: 'string' },
+         { name: 'account', type: 'address' }
+      ]
 
       const cancelOrder = async (key: string) => {
          const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))
-         
-         const domain = { name: 'oscillo', version: 'v1', chainId: 1, verifyingContract: '0x84B676e883d8Ee7Ca37160F2b21E0c5D6B81D0cA' }
+         const cancel = { account: wallet.address, key }         
+         const domain = { name: 'oscillo', version: 'v1', chainId: 1, verifyingContract: '0xBB0Cb9007ceF526cEdEc48FDc6D5f750641244f0' }
          const types: Record<string, Array<TypedDataField>> = { Cancel: CancelTypeFields }
-         const signature = await wallet._signTypedData(domain, types, { key })
+         const signature = await wallet._signTypedData(domain, types, cancel)
          
-         const data = { key, signature: signature, account: wallet.address }
+         const data = { signature, cancel }
          return axios({ method: 'DELETE', url: 'https://api-eth.osc.finance/order', data })
       }
 
