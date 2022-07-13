@@ -31,7 +31,6 @@ What's the oscillo's benefit for traders?
 * **Guaranteed Price**: Trade any volume of tokens without losing money on price impact, slippage or MEV attacks.
 * **Free Trading**: oscillo currently offers a zero trading fee promotion for all trading pairs to celebrate our launch.
 * **Gasless(meta)**: The only thing you need to start trading is a gasless signature.
-* **Decentralized**: Revenue generated from oscillo will be shared across all oscillo traders.
 
 Guaranteed Price
 ****************
@@ -45,9 +44,6 @@ Gasless(meta)
 *************
 Most decentralized exchanges use a smart contract to power all of their trades, which means that every time an order is placed, canceled, or filled, a gas fee is incurred which can make the process very expensive. Especially for lower scale traders, there are many cases where the fees are even greater than their order. However, from the user’s perspective, the oscillo’s exchanging operation will appear to be gasless, because oscillo uses off-chain pricing and on-chain settlement. When a user places an order, they must sign the transaction via their preferred wallet application. This process is gasless. When the user signs the transaction, they agree to send their order to oscillo to match and fill. In the settlement process that goes through a smart contract in order to ensure a reliable transaction, oscillo pays the user’s gas fee on their behalf and deducts it from the user’s traded tokens. This means that users can trade on oscillo despite not holding any native tokens(i.e. ETH on Ethereum network ). Also, oscillo helps large-scale traders drastically reduce transaction fees, as the settlement fee is charged only once even if an order is split by multiple participants.
 
-Decentralized
-*************
-Reward system to be announced after closing the zero trading fee promotion. Stay tuned!
 
 ----
 
