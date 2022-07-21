@@ -15,6 +15,7 @@ What makes oscillo unique?
 * **Index Price**: off-chain pricing system that uses the average price of various trusted markets.
 * **Index-Limit Order**: only executed at index price when the index price satisfies or is more profitable than the trigger conditions.
 * **Hybrid On/Off chain**: off-chain pricing for slippage or MEV protection and on-chain settlement for reliable transaction.
+* **Trading Widget**: oscillo’s trading widget can support P2E games’ in game auctions. The projects can charge a trading fee if they wish to do so. This means that projects can concentrate solely on game development instead.
 
 ----
 
@@ -31,6 +32,7 @@ What's the oscillo's benefit for traders?
 * **Guaranteed Price**: Trade any volume of tokens without losing money on price impact, slippage or MEV attacks.
 * **Free Trading**: oscillo currently offers a zero trading fee promotion for all trading pairs to celebrate our launch.
 * **Gasless(meta)**: The only thing you need to start trading is a gasless signature.
+* **Growth Market**: Market friendly to new tokens with liquidity providing issues. More profitable trades for users trading these tokens as there is significantly less slippage.
 
 Guaranteed Price
 ****************
