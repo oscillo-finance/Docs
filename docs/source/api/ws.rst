@@ -33,7 +33,7 @@ Subscribe
       {
          "type": "subscribe",
          "channel": "market",
-         "interest": "WBTC-USDC"
+         "interest": "WBTC-USDT"
       }
 
 
@@ -44,28 +44,33 @@ Subscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "subscribed",
          "channel": "market",
-         "interest": "WBTC-USDC",
+         "interest": "WBTC-USDT",
          "timestamp": 1654767820713,
          "contents": {
+            "id": "WBTC-USDT",
             "base": {
                "symbol": "WBTC",
-               "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-               "decimals": 8
+               "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+               "decimals": 18,
+               "native": false,
             },
             "quote": {
-               "symbol": "USDC",
-               "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-               "decimals": 6
+               "symbol": "USDT",
+               "address": "0x55d398326f99059fF775485246999027B3197955",
+               "decimals": 18,
+               "native": false,
             },
             "price": 30586000000,
             "price_denom": 1000000,
-            "reserve": 1000,
+            "reserve": 0,
             "reserve_denom": 1000000,
-            "precision": 0,
-            "market": "WBTC-USDC",
-            "minAmount": "1000",
-            "txFee": "0.0113",
-            "timestamp": 1654767820709
+            "buffer":1000,
+            "buffer_denom":1000000,
+            "precision": 1,
+            "txFee": "0.29",
+            "timestamp": 1654767820709,
+            "minAmount": "500000000000000",
+            "type":"major"
          }
       }
 
@@ -78,18 +83,18 @@ Subscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "subscribed",
          "channel": "orderbook",
-         "interest": "WBTC-USDC",
+         "interest": "WBTC-USDT",
          "timestamp": 1654767820714,
          "contents": {
             "asks": [ 
-               { "price": 30700000000, "size": "50000000" },
-               { "price": 30600000000, "size": "100000000" },
-               { "price": 30500000000, "size": "70000000" },
+               { "price": 30700000000, "size": "500000000000000" },
+               { "price": 30600000000, "size": "1100000000000000" },
+               { "price": 30500000000, "size": "500000000000000" },
             ],
             "bids": [
-               { "price": 30435000000, "size": "50000000" },
-               { "price": 30428000000, "size": "100000000" },
-               { "price": 30358000000, "size": "70000000" }
+               { "price": 30435000000, "size": "500000000000000" },
+               { "price": 30428000000, "size": "1100000000000000" },
+               { "price": 30358000000, "size": "500000000000000" }
          }
       }
 
@@ -108,11 +113,11 @@ Subscribe
             {
                "key": "{order}:21",
                "account": "YOUR_ADDRESS",
-               "market": "WBTC-USDC",
+               "market": "WBTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
-               "amount": "200000000",
+               "amount": "1000000000000000000",
                "filled": "0",
                "pending": "0",
                "unwrap": 0
@@ -120,11 +125,11 @@ Subscribe
             {
                "key": "{order}:13",
                "account": "YOUR_ADDRESS",
-               "market": "WBTC-USDC",
+               "market": "WBTC-USDT",
                "side": 20,
                "lprice": 30332000000,
                "status": 1,
-               "amount": "100000000",
+               "amount": "2000000000000000000",
                "filled": "0",
                "pending": "0",
                "unwrap": 0
@@ -150,7 +155,7 @@ Unsubscribe
       {
          "type": "unsubscribe",
          "channel": "market",
-         "interest": "WBTC-USDC"
+         "interest": "WBTC-USDT"
       }
 
 **Response**:
@@ -160,7 +165,7 @@ Unsubscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "unsubscribed",
          "channel": "market",
-         "interest": "WBTC-USDC",
+         "interest": "WBTC-USDT",
          "timestamp": 1654767820714
       }
 
@@ -178,27 +183,32 @@ Payload
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "update", // update only
          "channel": "market",
-         "interest": "WBTC-USDC",
+         "interest": "WBTC-USDT",
          "contents": {
                "base":{
-                  "symbol":"WBTC",
-                  "address":"0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-                  "decimals":8
+                  "symbol": "WBTC",
+                  "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+                  "decimals": 18,
+                  "native": false
                },
                "quote":{
-                  "symbol":"USDC",
-                  "address":"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-                  "decimals":6
+                  "symbol": "USDT",
+                  "address": "0x55d398326f99059fF775485246999027B3197955",
+                  "decimals": 18,
+                  "native": false
                },
-               "price":30986000000,
-               "price_denom":1000000,
-               "reserve":1000,
-               "reserve_denom":1000000,
-               "precision": 0,
-               "market":"WBTC-USDC",
-               "minAmount":"1000",
-               "txFee":"0.0113",
-               "timestamp":1654767820709
+               "price": 30986000000,
+               "price_denom": 1000000,
+               "reserve": 0,
+               "reserve_denom": 1000000,
+               "buffer": 1000,
+               "buffer_denom": 1000000,
+               "precision": 1,
+               "market": "WBTC-USDT",
+               "minAmount": "500000000000000",
+               "txFee": "0.29",
+               "timestamp": 1654767820709,
+               "type": "major"
          }
          "timestamp": 1654767820714
       }
@@ -217,9 +227,9 @@ Payload
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "update", // update only
          "channel": "orderbook",
-         "interest": "WBTC-USDC",
+         "interest": "WBTC-USDT",
          "contents": {
-              "asks": [{ "price": 30700000000, "size": "10000000" }] // size 0 for removal
+              "asks": [{ "price": 30700000000, "size": "1000000000000000000" }] // size 0 for removal
          }
          "timestamp": 1654767820714
       }
@@ -243,11 +253,11 @@ Payload
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "WBTC-USDC",
+               "market": "WBTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
-               "amount": "200000000",
+               "amount": "1000000000000000000",
                "filled": "0",
                "pending": "0",
                "unwrap": 0
@@ -266,11 +276,11 @@ Payload
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "WBTC-USDC",
+               "market": "WBTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
-               "amount": "200000000",
+               "amount": "1000000000000000000",
                "filled": "0",
                "pending": "0",
                "unwrap": 0
@@ -289,11 +299,11 @@ Payload
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "WBTC-USDC",
+               "market": "WBTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
-               "amount": "200000000",
+               "amount": "1000000000000000000",
                "filled": "0",
                "pending": "0",
                "unwrap": 0

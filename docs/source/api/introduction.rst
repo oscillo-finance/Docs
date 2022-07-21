@@ -14,18 +14,16 @@ Introduction
 General API Information
 =======================
 
-oscillo supports two networks [ETHEREUM, POLYGON].
+oscillo supports two networks [BNB Smart Chain(BSC), ETHEREUM].
 
 
+BSC
+   - REST_API_ENDPOINT: https://api-bsc.osc.finance
+   - WEBSOCKET_API_ENDPOINT: wss://api-bsc.osc.finance
 
 ETHEREUM
    - REST_API_ENDPOINT: https://api-eth.osc.finance
    - WEBSOCKET_API_ENDPOINT: wss://api-eth.osc.finance
-
-POLYGON
-   - REST_API_ENDPOINT: https://api-matic.osc.finance
-   - WEBSOCKET_API_ENDPOINT: wss://api-matic.osc.finance
-
 
 All endpoints return either a JSON object or array.
 All time and timestamp related fields are in milliseconds.
@@ -94,7 +92,9 @@ Terminology
 
 * **txFee**: The gas cost of executors performing transactions on your behalf. It is deducted from your token received. Denominated in dollar value.
 
+* **buffer**: The weight of lprice relative to index price. In auto-limit mode, ``lprice`` is determined [*buy order* = index price + index price * (buffer / buffer_denom), *sell order* = index price - index price * (buffer / buffer_denom)]
 
+* **buffer_denom**: 1e6.
 
 
 
@@ -108,9 +108,8 @@ oscillo contract
   ============================== ================================================= 
       .. centered:: Contract      .. centered:: Address                   
   ============================== =================================================
-      .. centered:: Exchange       0xBB0Cb9007ceF526cEdEc48FDc6D5f750641244f0
+      .. centered:: Exchange       0x63c33e25051cf97312983f5e9624E00E7b4A424A
       .. centered:: OSCToken       0x7e00AecaBA5df64e9FeFAb55aC6B3F58100e79E2  
-      .. centered:: Distributor    0x3103683332086a746835655F656141cD5582a008         
   ============================== ================================================= 
 
 
@@ -124,38 +123,47 @@ Listing
 .. note::
 
   :In Market:
-    * **Base Token**: Refers to the asset that is the quantity. For the WBTC-USDC Market, WBTC would be the base token.
-    * **Quote Token**: Refers to the asset that is the price. For the WBTC-USDC Market, USDC would be the quote token.
+    * **Base Token**: Refers to the asset that is the quantity. For the WBTC-USDT Market, WBTC would be the base token.
+    * **Quote Token**: Refers to the asset that is the price. For the WBTC-USDT Market, USDT would be the quote token.
+
+
+BSC
+    ========================= ======================= ======================================================
+    .. centered:: Market ID    .. centered:: Type       .. centered:: Base / Quote Token Address                     
+    ========================= ======================= ======================================================
+    .. centered:: WBTC-USDT    .. centered:: MAJOR      | 0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c(WBTC)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
+    .. centered:: WETH-USDT    .. centered:: MAJOR      | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(WETH)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
+    .. centered:: WBNB-USDT    .. centered:: MAJOR      | 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c(WBNB)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)  
+    .. centered:: GMT-USDT     .. centered:: MAJOR      | 0x3019BF2a2eF8040C242C9a4c5c4BD4C81678b2A1(GMT)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
+    .. centered:: CAKE-USDT    .. centered:: MAJOR      | 0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82(CAKE)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)                                  
+    .. centered:: BUSD-USDT    .. centered:: MAJOR      | 0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56(BUSD)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
+    .. centered:: USDC-USDT    .. centered:: MAJOR      | 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d(USDC)/
+                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
+    .. centered:: GST-USDT     .. centered:: GROWTH     | 0x4a2c860cEC6471b9F5F5a336eB4F38bb21683c98(GST)/
+                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
+    .. centered:: MBOX-USDT    .. centered:: GROWTH     | 0x3203c9E46cA618C8C1cE5dC67e7e9D75f5da2377(MBOX)/
+                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
+    ========================= ======================= ======================================================
+
 
 
 Ethereum
-    ========================= ==========================================
-    .. centered:: Market ID   .. centered:: Base / Quote Token Address                      
-    ========================= ==========================================
-    .. centered:: WBTC-USDC     | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599(WBTC)/
-                                  0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: WETH-USDC     | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(WETH)/
-                                 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: DAI-USDC      | 0x6B175474E89094C44Da98b954EedeAC495271d0F(DAI)/
-                                 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: USDT-USDC     | 0xdAC17F958D2ee523a2206206994597C13D831ec7(USDT)/
-                                 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    ========================= ==========================================
-
-
-Polygon
-    ========================= ==========================================
-    .. centered:: Market ID    .. centered:: Base / Quote Token Address                     
-    ========================= ==========================================
-    .. centered:: WBTC-USDC     | 0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6(WBTC)/
-                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
-    .. centered:: WETH-USDC     | 0x7ceb23fd6bc0add59e62ac25578270cff1b9f619(WETH)/
-                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
-    .. centered:: WMATIC-USDC   | 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270(WMATIC)/
-                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
-    .. centered:: DAI-USDC      | 0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063(DAI)/
-                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
-    .. centered:: USDT-USDC     | 0xc2132d05d31c914a87c6611c10748aeb04b58e8f(USDT)/
-                                  0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174(USDC)
-    ========================= ==========================================
+    ========================= ======================= ======================================================
+    .. centered:: Market ID     .. centered:: Type     .. centered:: Base / Quote Token Address                      
+    ========================= ======================= ======================================================
+    .. centered:: WBTC-USDC    .. centered:: MAJOR       | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599(WBTC)/
+                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    .. centered:: WETH-USDC    .. centered:: MAJOR       | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(WETH)/
+                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    .. centered:: DAI-USDC     .. centered:: MAJOR       | 0x6B175474E89094C44Da98b954EedeAC495271d0F(DAI)/
+                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    .. centered:: USDT-USDC    .. centered:: MAJOR       | 0xdAC17F958D2ee523a2206206994597C13D831ec7(USDT)/
+                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
+    ========================= ======================= ======================================================
 
