@@ -48,8 +48,6 @@ Step
 
 :raw-html:`<br />`
 
-- dWBTC, dWETH, and dUSDC are testing tokens with no real value.
-
 .. figure:: static/choose_token.png
     :align: center
     :figwidth: 100%
