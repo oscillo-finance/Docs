@@ -82,7 +82,7 @@ Terminology
 
 * **precision**: The range of the floating-point of the ``price``. ``lprice`` is expressed as a combination of ``precision`` and ``price_denom``. lprice = price.toFixed(precision) * price_denom
 
-* **lprice**: the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the ``lprice`` should be set at a disadvantage compared to the market ``price``. When the market ``price`` of BTCB is $30,000, selling ``lprice`` should be less than $30,000, and buying ``lprice`` should be above $30,000. In the oscillo interface, ``lprice`` is displayed as only if [≥, ≤]
+* **lprice**: the guaranteed price and is the worst price that can be accepted in the order request. For quick execution of orders, the ``lprice`` should be set at a disadvantage compared to the market ``price``. When the market ``price`` of BTC is $30,000, selling ``lprice`` should be less than $30,000, and buying ``lprice`` should be above $30,000. In the oscillo interface, ``lprice`` is displayed as only if [≥, ≤]
 
 * **reserve**: This is the protocol reserve of the market deducted from your token received. The reserves are redistributed to participants through OSC tokens. TradingFee = reserve / reserve_denome * TradeVolume
 
@@ -123,19 +123,19 @@ Listing
 .. note::
 
   :In Market:
-    * **Base Token**: Refers to the asset that is the quantity. For the BTCB-USDT Market, BTCB would be the base token.
-    * **Quote Token**: Refers to the asset that is the price. For the BTCB-USDT Market, USDT would be the quote token.
+    * **Base Token**: Refers to the asset that is the quantity. For the BTC-USDT Market, BTC would be the base token.
+    * **Quote Token**: Refers to the asset that is the price. For the BTC-USDT Market, USDT would be the quote token.
 
 
 BSC
     ========================= ======================= ======================================================
     .. centered:: Market ID    .. centered:: Type       .. centered:: Base / Quote Token Address                     
     ========================= ======================= ======================================================
-    .. centered:: BTCB-USDT    .. centered:: MAJOR      | 0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c(BTCB)/
+    .. centered:: BTC-USDT     .. centered:: MAJOR      | 0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c(BTC)/
                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
-    .. centered:: ETH-USDT    .. centered:: MAJOR       | 0x2170Ed0880ac9A755fd29B2688956BD959F933F8(ETH)/
+    .. centered:: ETH-USDT     .. centered:: MAJOR      | 0x2170Ed0880ac9A755fd29B2688956BD959F933F8(ETH)/
                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
-    .. centered:: WBNB-USDT    .. centered:: MAJOR      | 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c(WBNB)/
+    .. centered:: BNB-USDT     .. centered:: MAJOR      | 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c(BNB)/
                                                          0x55d398326f99059fF775485246999027B3197955(USDT)  
     .. centered:: GMT-USDT     .. centered:: MAJOR      | 0x3019BF2a2eF8040C242C9a4c5c4BD4C81678b2A1(GMT)/
                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
@@ -157,9 +157,9 @@ Ethereum
     ========================= ======================= ======================================================
     .. centered:: Market ID     .. centered:: Type     .. centered:: Base / Quote Token Address                      
     ========================= ======================= ======================================================
-    .. centered:: WBTC-USDC    .. centered:: MAJOR       | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599(WBTC)/
+    .. centered:: BTC-USDC     .. centered:: MAJOR        | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599(BTC)/
                                                            0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: WETH-USDC    .. centered:: MAJOR       | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(WETH)/
+    .. centered:: ETH-USDC     .. centered:: MAJOR        | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(ETH)/
                                                            0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
     .. centered:: DAI-USDC     .. centered:: MAJOR       | 0x6B175474E89094C44Da98b954EedeAC495271d0F(DAI)/
                                                            0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)

@@ -33,7 +33,7 @@ Subscribe
       {
          "type": "subscribe",
          "channel": "market",
-         "interest": "BTCB-USDT"
+         "interest": "BTC-USDT"
       }
 
 
@@ -44,12 +44,12 @@ Subscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "subscribed",
          "channel": "market",
-         "interest": "BTCB-USDT",
+         "interest": "BTC-USDT",
          "timestamp": 1654767820713,
          "contents": {
-            "id": "BTCB-USDT",
+            "id": "BTC-USDT",
             "base": {
-               "symbol": "BTCB",
+               "symbol": "BTC",
                "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
                "decimals": 18,
                "native": false,
@@ -83,7 +83,7 @@ Subscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "subscribed",
          "channel": "orderbook",
-         "interest": "BTCB-USDT",
+         "interest": "BTC-USDT",
          "timestamp": 1654767820714,
          "contents": {
             "asks": [ 
@@ -113,7 +113,7 @@ Subscribe
             {
                "key": "{order}:21",
                "account": "YOUR_ADDRESS",
-               "market": "BTCB-USDT",
+               "market": "BTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
@@ -125,7 +125,7 @@ Subscribe
             {
                "key": "{order}:13",
                "account": "YOUR_ADDRESS",
-               "market": "BTCB-USDT",
+               "market": "BTC-USDT",
                "side": 20,
                "lprice": 30332000000,
                "status": 1,
@@ -155,7 +155,7 @@ Unsubscribe
       {
          "type": "unsubscribe",
          "channel": "market",
-         "interest": "BTCB-USDT"
+         "interest": "BTC-USDT"
       }
 
 **Response**:
@@ -165,7 +165,7 @@ Unsubscribe
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "unsubscribed",
          "channel": "market",
-         "interest": "BTCB-USDT",
+         "interest": "BTC-USDT",
          "timestamp": 1654767820714
       }
 
@@ -183,10 +183,10 @@ Payload
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "update", // update only
          "channel": "market",
-         "interest": "BTCB-USDT",
+         "interest": "BTC-USDT",
          "contents": {
                "base":{
-                  "symbol": "BTCB",
+                  "symbol": "BTC",
                   "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
                   "decimals": 18,
                   "native": false
@@ -204,7 +204,7 @@ Payload
                "buffer": 1000,
                "buffer_denom": 1000000,
                "precision": 1,
-               "market": "BTCB-USDT",
+               "market": "BTC-USDT",
                "minAmount": "500000000000000",
                "txFee": "0.29",
                "timestamp": 1654767820709,
@@ -227,7 +227,7 @@ Payload
          "connection_id": "07b03b90-463e-4d4c-989e-8c2763d4ebb1",
          "type": "update", // update only
          "channel": "orderbook",
-         "interest": "BTCB-USDT",
+         "interest": "BTC-USDT",
          "contents": {
               "asks": [{ "price": 30700000000, "size": "1000000000000000000" }] // size 0 for removal
          }
@@ -253,7 +253,7 @@ Payload
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "BTCB-USDT",
+               "market": "BTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
@@ -276,7 +276,7 @@ Payload
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "BTCB-USDT",
+               "market": "BTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
@@ -299,7 +299,7 @@ Payload
             {
                "key": "{order}:21",
                "account": "user address",
-               "market": "BTCB-USDT",
+               "market": "BTC-USDT",
                "side": 20,
                "lprice": 30285000000,
                "status": 1,
