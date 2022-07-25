@@ -33,9 +33,9 @@ Market Info
          "code": 200,
          "reason": "Success",
          "result": {
-            "id": "WBTC-USDT",
+            "id": "BTCB-USDT",
             "base": {
-               "symbol": "WBTC",
+               "symbol": "BTCB",
                "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
                "decimals": 18,
                "native": false
@@ -93,7 +93,7 @@ Place Order
             "account": "YOUR_ADDRESS",
             "tokenIn": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
             "tokenOut": "0x55d398326f99059fF775485246999027B3197955",
-            "amout": "1500000000000000000", // 1.5 WBTC (decimals: 18)
+            "amout": "1500000000000000000", // 1.5 BTCB (decimals: 18)
             "lprice": "31500000000" // 31,500 usdt
          },
          "signature": "YOUR_SIGNATURE",
@@ -144,11 +144,11 @@ Place Order
       const toLprice = (price: number, precision: number): number => parseFloat(price.toFixed(precision)) * 1_000_000	
 
       /**	
-      * Sell 1.5 WBTC with lprice $31,500	
+      * Sell 1.5 BTCB with lprice $31,500	
       *	
-      * Market ID: WBTC-USDT	
+      * Market ID: BTCB-USDT	
       * Market Precision: 0	
-      * Base Token: WBTC { address: 0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c, decimals: 18 }	
+      * Base Token: BTCB { address: 0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c, decimals: 18 }	
       * Quote Token: USDT { address: 0x55d398326f99059fF775485246999027B3197955, decimals: 18 }	
       * */	
       placeOrder('0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', '0x55d398326f99059fF775485246999027B3197955', '1500000000000000000', toLprice(31500, 0), 0)	
