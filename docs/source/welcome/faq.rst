@@ -77,6 +77,30 @@ oscillo’s growth market provides newer projects with an opportunity to focus o
 Traditionally, using AMM based DEXs, a new cryptocurrency was required to provide its own liquidity in order to have a platform for investors to trade it on. This step can be very difficult for many projects, as the capital needed is often unavailable to them. Even if they provide tens of thousands of dollars for liquidity, users will experience extreme amounts of slippage, as this is still a very low liquidity number. The growth market solves all of these problems. It helps the projects as it allows them to conserve funds or devote them towards development since they do not need to provide their own liquidity. The projects control many portions of the trading, such as trading fees or slippage tolerance. The trading fee, if set, would go to the projects to help with further development. It also greatly helps the users who want to trade the projects’ tokens as the slippage is significantly reduced (there may still be some slippage, but it will never exceed the tolerance percentage set by the projects). They also do not have to pay liquidity fees characteristic to traditional DEXs. The growth market’s price is set by the average price of the highest bid and the lowest ask.
 
 
+What is the difference between Major and Growth?
+#################################################
+
+.. list-table::
+   :widths: 20 40 40
+   :header-rows: 1
+
+   * -
+     - Major Market
+     - Growth Market
+   * - Token
+     - Tokens listed on major CEXs and traded over a certain size
+     - Fresh or fast-growing tokens
+   * - Index Price
+     - Off-chain pricing system that uses the average price of various trusted markets
+     - Not off-chain price, but set by the average price of the highest bid and the lowest ask
+   * - Execution
+     - Only executed at index price when the index price satisfies or is more profitable than the trigger conditions
+     - Just same with CEX, executed whenever the counterpart condition is matched with my condition
+   * - Slippage
+     - Zero slippage quoted from guaranteed price
+     - Slippage can occur depending on the order spread
+
+
 What is oscillo's trading widget?
 ###################################
 Another key service oscillo provides is its trading widget that can be implemented by other dAPPs, such as P2E games. This trading widget can be used by these dAPPs for a variety of purposes, such as P2P NFT game item trading. This process significantly eases developers’ requirements as they do not need to worry about providing their own liquidity, therefore, allowing them to devote additional resources to more important tasks. Furthermore, as they do not need to program their own exchange, they can put more attention towards developing the dAPP itself. It also provides the users with a much better experience as they have less fees to pay. The widget can be modified in different ways, such as fees, to satisfy developers’ wants. 
