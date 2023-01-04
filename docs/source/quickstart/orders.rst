@@ -20,7 +20,8 @@ b. There are three statuses for an order; Active, Filled, and Canceled.
     - Filled: the order is fulfilled
     - Canceled: the order is canceled
 c. 'Filled' shows the amount that order is fulfilled.  'Amount' minus 'Filled' is the remaining order.
-d. You can see your trade history with this button.
+d. Order will be expired in 24 hours.
+e. You can see your trade history with this button.
 
 
 Cancel open orders
