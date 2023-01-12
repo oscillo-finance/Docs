@@ -81,8 +81,9 @@ Place Order
             - tokenOut(*string*) -- Output token address
             - amount(*string*) -- Trading amount (base token amount)
             - lprice(*number*) -- Guaranteed Price. Orders are traded at a favorable price than lprice. The lprice denominator is 1e6. See :ref:`Terminology <terminology>`
+            - deadline(*number*) -- Valid time. The order will be deleted if the current time exceeds the deadline.
    * **signature** (*string*) -- See `EIP-712 specification`_ , `SignTypedData`_ 
-   * **unwrap** (*number: 0 or 1*) -- Bid only option for native coins like BNB or ETH. Set to 1 to receive it in unwrapped native coins. 0 otherwise.
+   * **unwrap** (*number: 0 or 1*) -- Bid only option for native coins like BNB. Set to 1 to receive it in unwrapped native coins. 0 otherwise.
 
 
 **Resquest**:
@@ -94,7 +95,8 @@ Place Order
             "tokenIn": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
             "tokenOut": "0x55d398326f99059fF775485246999027B3197955",
             "amout": "1500000000000000000", // 1.5 BTC (decimals: 18)
-            "lprice": "31500000000" // 31,500 usdt
+            "lprice": "31500000000", // 31,500 usdt
+            "deadline": "1673504618"
          },
          "signature": "YOUR_SIGNATURE",
          "unwrap": "0"
@@ -127,10 +129,11 @@ Place Order
          { name: 'tokenIn', type: 'address' },	
          { name: 'tokenOut', type: 'address' },	
          { name: 'amount', type: 'uint256' },	
-         { name: 'lprice', type: 'uint256' }	
+         { name: 'lprice', type: 'uint256' },	
+         { name: 'deadline', type: 'uint256' },	
       ]	
 
-      const placeOrder = async (tokenIn: string, tokenOut: string, amount: string, lprice: number, unwrap: number) => {	
+      const placeOrder = async (tokenIn: string, tokenOut: string, amount: string, lprice: number, deadline: number, unwrap: number) => {	
          const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))	
          const order = { account: wallet.address, tokenIn, tokenOut, amount, lprice }	
          const domain = { name: 'oscillo', version: 'v1', chainId: 56, verifyingContract: '0x63c33e25051cf97312983f5e9624E00E7b4A424A' }	
@@ -151,7 +154,7 @@ Place Order
       * Base Token: BTC { address: 0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c, decimals: 18 }	
       * Quote Token: USDT { address: 0x55d398326f99059fF775485246999027B3197955, decimals: 18 }	
       * */	
-      placeOrder('0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', '0x55d398326f99059fF775485246999027B3197955', '1500000000000000000', toLprice(31500, 0), 0)	
+      placeOrder('0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', '0x55d398326f99059fF775485246999027B3197955', '1500000000000000000', toLprice(31500, 0), 1673504618, 0)	
 
 
 

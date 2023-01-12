@@ -14,16 +14,13 @@ Introduction
 General API Information
 =======================
 
-oscillo supports two networks [BNB Smart Chain(BSC), ETHEREUM].
+oscillo supports BNB Smart Chain(BSC) networks.
 
 
 BSC
    - REST_API_ENDPOINT: https://api-bsc.osc.finance
    - WEBSOCKET_API_ENDPOINT: wss://api-bsc.osc.finance
 
-ETHEREUM
-   - REST_API_ENDPOINT: https://api-eth.osc.finance
-   - WEBSOCKET_API_ENDPOINT: wss://api-eth.osc.finance
 
 All endpoints return either a JSON object or array.
 All time and timestamp related fields are in milliseconds.
@@ -108,7 +105,7 @@ oscillo contract
   ============================== ================================================= 
       .. centered:: Contract      .. centered:: Address                   
   ============================== =================================================
-      .. centered:: Exchange       0x63c33e25051cf97312983f5e9624E00E7b4A424A
+      .. centered:: Exchange       0xa1CAbab1D6E0007f721a20cf1ECBC9167Cd1404e
       .. centered:: OSCToken       0x7e00AecaBA5df64e9FeFAb55aC6B3F58100e79E2  
   ============================== ================================================= 
 
@@ -137,33 +134,6 @@ BSC
                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
     .. centered:: BNB-USDT     .. centered:: MAJOR      | 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c(BNB)/
                                                          0x55d398326f99059fF775485246999027B3197955(USDT)  
-    .. centered:: GMT-USDT     .. centered:: MAJOR      | 0x3019BF2a2eF8040C242C9a4c5c4BD4C81678b2A1(GMT)/
-                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
-    .. centered:: CAKE-USDT    .. centered:: MAJOR      | 0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82(CAKE)/
-                                                         0x55d398326f99059fF775485246999027B3197955(USDT)                                  
-    .. centered:: BUSD-USDT    .. centered:: MAJOR      | 0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56(BUSD)/
-                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
-    .. centered:: USDC-USDT    .. centered:: MAJOR      | 0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d(USDC)/
-                                                         0x55d398326f99059fF775485246999027B3197955(USDT)
-    .. centered:: GST-USDT     .. centered:: GROWTH     | 0x4a2c860cEC6471b9F5F5a336eB4F38bb21683c98(GST)/
-                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
-    .. centered:: MBOX-USDT    .. centered:: GROWTH     | 0x3203c9E46cA618C8C1cE5dC67e7e9D75f5da2377(MBOX)/
-                                                          0x55d398326f99059fF775485246999027B3197955(USDT)
     ========================= ======================= ======================================================
 
-
-
-Ethereum
-    ========================= ======================= ======================================================
-    .. centered:: Market ID     .. centered:: Type     .. centered:: Base / Quote Token Address                      
-    ========================= ======================= ======================================================
-    .. centered:: BTC-USDC     .. centered:: MAJOR        | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599(BTC)/
-                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: ETH-USDC     .. centered:: MAJOR        | 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2(ETH)/
-                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: DAI-USDC     .. centered:: MAJOR       | 0x6B175474E89094C44Da98b954EedeAC495271d0F(DAI)/
-                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    .. centered:: USDT-USDC    .. centered:: MAJOR       | 0xdAC17F958D2ee523a2206206994597C13D831ec7(USDT)/
-                                                           0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48(USDC)
-    ========================= ======================= ======================================================
 
