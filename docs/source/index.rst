@@ -39,6 +39,7 @@ Key Links
    quickstart/custom
    quickstart/orders
    quickstart/history
+   quickstart/referral
 
 .. toctree::
    :caption: API
