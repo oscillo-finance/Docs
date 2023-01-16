@@ -58,9 +58,9 @@ What is open order?
 It is a pending order that has not been matched yet.
 
 
-Does oscillo support 'token-usdc' pairs only?
+Does oscillo support 'token-usdt' pairs only?
 #############################################
-Yes, for now you will only be able to buy tokens with USDC.
+Yes, for now you will only be able to buy tokens with USDT.
 
 
 Why is my order split into multiple matches?

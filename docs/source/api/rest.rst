@@ -135,8 +135,8 @@ Place Order
 
       const placeOrder = async (tokenIn: string, tokenOut: string, amount: string, lprice: number, deadline: number, unwrap: number) => {	
          const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))	
-         const order = { account: wallet.address, tokenIn, tokenOut, amount, lprice }	
-         const domain = { name: 'oscillo', version: 'v1', chainId: 56, verifyingContract: '0x63c33e25051cf97312983f5e9624E00E7b4A424A' }	
+         const order = { account: wallet.address, tokenIn, tokenOut, amount, lprice, deadline }	
+         const domain = { name: 'oscillo', version: 'v1', chainId: 56, verifyingContract: '0xa1CAbab1D6E0007f721a20cf1ECBC9167Cd1404e' }	
          const types: Record<string, Array<TypedDataField>> = { Order: OrderTypeFields }	
          const signature = await wallet._signTypedData(domain, types, order)	
             
@@ -202,7 +202,7 @@ Cancel Order
       const cancelOrder = async (key: string) => {
          const wallet: Wallet = new ethers.Wallet('YOUR_PRIVATE_KEY', new JsonRpcProvider('YOUR_RPC_ENDPOINT'))
          const cancel = { account: wallet.address, key }         
-         const domain = { name: 'oscillo', version: 'v1', chainId: 56, verifyingContract: '0x63c33e25051cf97312983f5e9624E00E7b4A424A' }
+         const domain = { name: 'oscillo', version: 'v1', chainId: 56, verifyingContract: '0xa1CAbab1D6E0007f721a20cf1ECBC9167Cd1404e' }
          const types: Record<string, Array<TypedDataField>> = { Cancel: CancelTypeFields }
          const signature = await wallet._signTypedData(domain, types, cancel)
          
